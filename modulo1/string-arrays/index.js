@@ -79,7 +79,7 @@ console.log(listaDeTarefas);
 // Desafios
 // 1.
 let fraseRecebida = prompt("Insira uma frase.")
-let array2 = fraseRecebida.split(' ').filter(i => i !== '')
+let array2 = fraseRecebida.split(' ')
 console.log(array2)
 
 // 2. 
