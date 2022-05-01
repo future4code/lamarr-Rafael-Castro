@@ -22,29 +22,13 @@ function checkCards(cards){
    return cards
 }
 
+// Saca nova carta, caso usuário confirme. Caso contrário inicia turno do cormputador
 function hitMe(cards) {
-   let cardsTextsList = []
-   for (let i = 0; i < cards.length; i++) {
-      cardsTextsList.push(cards[i].texto)
-   }
-   if (confirm(`Suas cartas são ${cardsTextsList}. A carta revelada do computador é ${computerCards[0].texto}.\nDeseja comprar mais uma carta?`)) {
+   cardFaces(cards)
+   if (confirm(`Suas cartas são ${cardsFacesList}. A carta revelada do computador é ${computerCards[0].texto}.\nDeseja comprar mais uma carta?`)) {
       cards.push(comprarCarta())
    } else {
+      gameOn = false
       computerTurn()
    }
 }
-
-
-
-
-
-
-// let checkCards = (cards) => {
-//    while (cards[0].texto[0] === "A" && cards[1].texto[0] === "A") {
-//       console.log("Dois Ases! Recebendo novas cartas.")
-//       cards = []
-//       cards.push(comprarCarta())
-//       cards.push(comprarCarta())
-//    }
-//    return cards
-// }

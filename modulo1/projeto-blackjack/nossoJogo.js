@@ -18,6 +18,8 @@ let playerScore
 let computerScore
 let playerCards
 let computerCards
+let cardsFacesList
+let gameOn
 
 //Funções
 
@@ -39,21 +41,50 @@ function sumPoints(cards){
    return score
 }
 
-// Identifica vencedor
-function checkWinner() {
+// Reúne os textos das cartas em um array para exibição
+function cardFaces(cards) {
+   cardsFacesList = []
+   for (let i = 0; i < cards.length; i++) {
+      cardsFacesList.push(cards[i].texto)
+   }
+}
+
+// Verfica se jogador "estourou" e recomeça jogo ou jogador compra nova carta
+function playerTurn() {
    if (playerScore > 21) {
       console.log("O computador ganhou!")
+      gameOn = false
       startGame()
-   } else if (playerScore <= 21) {
-      hitMe(playerCards)
    } else {
-      winnerMsg = "Empate!"
+      hitMe(playerCards)
    }
 }
 
 // Computador saca cartas até finalizar
 function computerTurn(){
+   while (computerScore < playerScore) {
+      computerCards.push(comprarCarta())
+      computerScore = sumPoints(computerCards)
+      cardFaces(computerCards)
+      console.log(`Computador - cartas: ${cardsFacesList} - pontuação ${computerScore}`)
+   }
+}
 
+// Verifica vencedor e recomeça partida
+function checkWinner() {
+   if (computerScore > 21) {
+      console.log("O jogador venceu!")
+      startGame()
+   } else if (playerScore > computerScore) {
+      console.log("O jogador venceu!")
+      startGame()
+   } else if (playerScore < computerScore) {
+      console.log("O computador venceu!")
+      startGame()
+   } else if (playerScore === computerScore) {
+      console.log("Empate!")
+      startGame()
+   }
 }
 
 // Game loop
@@ -62,6 +93,7 @@ function gameLoop(){
    computerScore = 0
    playerCards = []
    computerCards = []
+   gameOn = true
 
    // "Compra" e adiciona cartas à mão
    playerCards.push(comprarCarta())
@@ -76,58 +108,22 @@ function gameLoop(){
    computerCards.push(comprarCarta())
    computerScore = sumPoints(computerCards)
    
-   console.log(`Usuário - cartas: ${playerCards[0].texto} ${playerCards[1].texto} - pontuação ${playerScore}`)
+   cardFaces(playerCards)
+   console.log(`Usuário - cartas: ${cardsFacesList} - pontuação ${playerScore}`)
    console.log(`Computador - cartas: ${computerCards[0].texto} - pontuação ${computerScore}`)
 
    hitMe(playerCards)
    playerScore = sumPoints(playerCards)
-   console.log(`Usuário - cartas: ${playerCards[0].texto} ${playerCards[1].texto} ${playerCards[2].texto} - pontuação ${playerScore}`)
+   
+   cardFaces(playerCards)
+   console.log(`Usuário - cartas: ${cardsFacesList} - pontuação ${playerScore}`)
+   
+   while (gameOn) {
+   playerTurn()
+   playerScore = sumPoints(playerCards)
+   }
+   
    checkWinner()
 }
 
 startGame()
-
-
-
-// computerCards.push(comprarCarta())
-// computerCards = checkCards(computerCards)
-
-// computerScore += computerCards[1].valor
-
-
-
-
-
-
-
-
-// console.log(playerCards[0].texto)
-// console.log(playerCards[0].valor)
-// console.log(playerCards[1].texto)
-// console.log(playerCards[1].valor)
-// console.log(computerCards[0].texto)
-// console.log(computerCards[0].valor)
-// console.log(computerCards[1].texto)
-// console.log(computerCards[1].valor)
-// console.log(playerScore)
-// console.log(computerScore)
-
-// let card1 = {
-//    texto: "10♦️",
-//    valor: 10
-// }
-// let card2 = {
-//    texto: "A♦️",
-//    valor: 7
-// }
-// let card3 = {
-//    texto: "4♦️",
-//    valor: 5
-// }
-// let card4 = {
-//    texto: "A♦️",
-//    valor: 3
-// }
-
-// let playerCards = [card1,card2]
-// let computerCards = [card3,card4]
