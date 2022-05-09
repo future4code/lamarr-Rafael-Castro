@@ -20,7 +20,20 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-
+    // return array.sort((a,b) => a-b)
+    let loop = true
+    while (loop) {
+        loop = false
+        for (let i = 1; i < array.length; i++) {
+            if (array[i-1] > array[i]) {
+                let aux = array[i-1]
+                array[i-1] = array[i]
+                array[i] = aux
+                loop = true
+            }
+        }
+    }
+    return array
 }
 
 // EXERCÍCIO 04
