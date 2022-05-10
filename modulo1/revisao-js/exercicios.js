@@ -66,12 +66,25 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+    let maiorNum = 0
+    let menorNum = 0
+    if (num1 > num2) {
+        maiorNum = num1
+        menorNum = num2
+    } else {
+        menorNum = num1
+        maiorNum = num2
+    }
+    return {
+        maiorNumero: maiorNum,
+        maiorDivisivelPorMenor: maiorNum % menorNum === 0,
+        diferenca: maiorNum - menorNum
+    }
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+    return [...Array(n*2).keys()].filter(item => item % 2 === 0)
 }
 
 // EXERCÍCIO 09
