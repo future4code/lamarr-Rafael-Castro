@@ -50,7 +50,13 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    let newArray = []
+    for (let n of array) {
+        if (n % 2 === 0) {
+            newArray.push(n**2)
+        }
+    }
+    return newArray
 }
 
 // EXERCÍCIO 06
