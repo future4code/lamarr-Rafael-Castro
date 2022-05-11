@@ -140,12 +140,23 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    let somaCompras = 0
+    for (const i of contas) {
+        if (i.compras.length > 1){
+            somaCompras = i.compras.reduce((a,b) => a+b)
+        } else if (i.compras.length === 1){
+            somaCompras = i.compras[0]
+        }
+        i.saldoTotal = i.saldoTotal - somaCompras
+        i.compras = []
+        somaCompras = 0
+    }
+    return contas
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    
 }
 
 // EXERCÍCIO 15B
