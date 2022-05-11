@@ -111,12 +111,14 @@ function retornaChamadaDeFilme(filme) {
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-    
+    return {...pessoa, nome: "ANÔNIMO"}
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+    if (condition) {
+        
+    }
 }
 
 // EXERCÍCIO 13B
