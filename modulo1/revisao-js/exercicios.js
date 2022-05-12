@@ -170,5 +170,24 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
+    function dateFormat(date){
+        let day = date[3]+date[4]
+        let month = date[0]+date[1]
+        let year = date[6]+date[7]+date[8]+date[9]
+        let dateFormated = day+'/'+month+'/'+year
+        return dateFormated
+    }
+        
+    for (let i of consultas) {
+        i.dataDaConsulta = dateFormat(i.dataDaConsulta)
+    }
+    
+    consultas.sort(function(a,b){
+        return Date.parse(a.dataDaConsulta) - Date.parse(b.dataDaConsulta)
+    })
 
+    for (let i of consultas) {
+        i.dataDaConsulta = dateFormat(i.dataDaConsulta)
+    }
+    return consultas
 }
