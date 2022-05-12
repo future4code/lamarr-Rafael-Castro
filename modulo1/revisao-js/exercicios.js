@@ -156,10 +156,19 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-    
+    function sortNames(a,b){
+        if (a.nome < b.nome) {
+            return -1
+        } else if (a.nome > b.nome){
+            return 1
+        } else{
+            return 0
+        }
+    }
+    return consultas.sort(sortNames)
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+
 }
