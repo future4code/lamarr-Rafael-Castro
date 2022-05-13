@@ -1,0 +1,27 @@
+1.
+Ler o enunciado do problema a ser resolvido atentamente. Ler diversas vezes, buscando
+absorver todos os detalhes e informações contidas nele.
+
+2.
+Buscar interpretar adequadamente as condições e informações fornecidas. Coletar e ,
+ se necessário tomar notas, dos dados fornecidos no enunciado.
+
+3.
+Considerar os valores que deverão ser fornecidos (inputs) para que o objetivo seja alcançado
+e os valores que deverão ser obtidos do código após sua conclusão.
+
+4.
+Desenvolva um esquema ou um caminho de raciocínio para chegar ao resultado desejado. Isso
+pode ser feito escrevendo um pseudo-código ou apenas bullets dos passos.
+
+5.
+Codar buscando alcançar o objetivo sem se preocupar muito com a estética ou eficiência
+ do código.
+
+6.
+Buscar as soluções óbvias, os caminhos mais simples, mesmo que sejam mais longos
+ e repetitivos até alcançar o objetivo.
+
+7.
+Refatorar o código buscando eliminar repetições desnecessárias. Melhorar a eficiência e 
+estética do código.
