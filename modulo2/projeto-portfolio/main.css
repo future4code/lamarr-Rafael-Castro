@@ -2,6 +2,7 @@ body{
     background-image: url(img/fjord01.jpg);
     background-color: rgba(0, 15, 144, 0.8);
     background-size: cover;
+    font-size: large;
 }
 
 nav{
@@ -13,17 +14,24 @@ nav{
     border-radius: 0 0 10px 10px;
 }
 
-nav a{
-    margin: 0 15px 0 15px;
-}
-
 header{
     display: flex;
     background: rgba(0, 127, 66, 0.8);
     height: 20em;
     margin: 19px -5px 2px -5px;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
+}
+
+header h2{
+    align-self: start;
+}
+
+header img{
+    position: absolute;
+    transform: scale(0.15);
+    bottom: -3%;
 }
 
 main{
@@ -35,9 +43,30 @@ table{
     table-layout: fixed;
 }
 
-.main-section{
+form input, textarea{
+    display: block;
+    margin-bottom: 1em;
+    width: 60%;
+}
+
+h3{
+    margin-top: 2em;
+}
+
+.nav-items{
+    margin: 0 15px 0 15px;
+}
+
+.main-section, .main-section-head{
     background: rgba(0, 35, 74, 0.9);
     vertical-align: top;
     border-radius: 10px;
-    padding: 0 20px 0 20px;
+}
+
+.main-section{
+    padding: 20px 20px 20px 40px;
+}
+
+.btn{
+    width: 61%;
 }
