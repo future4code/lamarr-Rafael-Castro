@@ -17,7 +17,7 @@ nav{
 header{
     display: flex;
     background: rgba(0, 127, 66, 0.8);
-    height: 20em;
+    height: 500px;
     margin: 19px -5px 2px -5px;
     justify-content: center;
     align-items: center;
@@ -28,11 +28,76 @@ header h2{
     align-self: start;
 }
 
-header img{
+.d-logo{
     position: absolute;
-    transform: scale(0.15);
-    bottom: -3%;
+    height: 250px;
+    top: 200px;
 }
+
+.d-logo img{
+    height: 100%;
+}
+
+.letter-container span {
+    display: flex;
+    align-items: flex-end;
+    font: 26px Monaco, MonoSpace;
+    position: absolute;
+    width: 12px;
+    transform-origin: top center;
+    /* border: dotted white; */
+}
+
+.sobre-container{
+    transform: rotate(65deg);
+}
+
+.sobre-container span{
+    height: 120px;
+    left: -78px;
+    top: 15px;
+}
+
+/* Letras da palavra sobre */
+.sobre1 { transform: rotate(18deg); }
+.sobre2 { transform: rotate(9deg); }
+.sobre3 { transform: rotate(0deg); }
+.sobre4 { transform: rotate(-9deg); }
+.sobre5 { transform: rotate(-18deg); }
+
+.habilidades-container{
+    transform: rotate(10deg);
+}
+
+.habilidades-container span{
+    height: 200px;
+    left: 55px;
+    top: -155px;
+}
+
+/* Letras da palavra habilidades */
+.hab1 { transform: rotate(15deg); }
+.hab2 { transform: rotate(10deg); }
+.hab3 { transform: rotate(5deg); }
+.hab4 { transform: rotate(0deg); }
+.hab5 { transform: rotate(-5deg); }
+.hab6 { transform: rotate(-10deg); }
+.hab7 { transform: rotate(-15deg); }
+.hab8 { transform: rotate(-20deg); }
+.hab9 { transform: rotate(-25deg); }
+.hab10 { transform: rotate(-30deg); }
+.hab11 { transform: rotate(-35deg); }
+
+.projetos-container{
+    transform: rotate(10deg);
+}
+
+.projetos-container span{
+    height: 200px;
+    left: 55px;
+    top: -155px;
+}
+
 
 main{
     margin: 0 -6px -6px -7px;
@@ -49,7 +114,7 @@ form input, textarea{
     width: 60%;
 }
 
-h3{
+.table-titles{
     margin-top: 2em;
 }
 
