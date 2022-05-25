@@ -1,0 +1,63 @@
+body{
+    background-color: rgba(178, 208, 186, 0.6);
+}
+
+nav{
+    height: 30px;
+    background-color: rgb(14, 123, 131);
+    margin: -8px;
+    border-radius: 0 0 10px 10px;
+}
+
+
+nav a{
+    margin: 15px;
+    font-size: large;
+    font-weight: 600;
+}
+
+nav a:first-child{
+    margin-left: 30px;
+}
+
+header{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+footer{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+footer p, footer a{
+    margin-left: 20px;
+}
+
+label{
+    font-style: italic
+}
+
+td img{
+    max-width: 100px;
+    height: auto;
+}
+
+td, table{
+    border: 1px solid black;
+}
+
+.v-line{
+    display: inline;
+    border-right: 1.5px solid black;
+}
+
+nav a, .v-line{
+    margin-top: 15px;
+}
+
+.empreg-container{
+    font-weight: bold;
+}
