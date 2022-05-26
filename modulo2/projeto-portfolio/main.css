@@ -39,6 +39,9 @@ header h2{
 }
 
 .letter-container span {
+    height: 180px;
+    left: 82px;
+    top: 110px;
     display: flex;
     align-items: flex-end;
     font: 26px Monaco, MonoSpace;
@@ -48,70 +51,77 @@ header h2{
     /* border: dotted white; */
 }
 
-.sobre-container{
-    transform: rotate(65deg);
-}
-
-.sobre-container span{
-    height: 120px;
-    left: -78px;
-    top: 15px;
-}
-
 /* Letras da palavra sobre */
-.sobre1 { transform: rotate(18deg); }
-.sobre2 { transform: rotate(9deg); }
-.sobre3 { transform: rotate(0deg); }
-.sobre4 { transform: rotate(-9deg); }
-.sobre5 { transform: rotate(-18deg); }
-
-.habilidades-container{
-    transform: rotate(10deg);
-}
-
-.habilidades-container span{
-    height: 200px;
-    left: 55px;
-    top: -155px;
-}
+.sobre1 { transform: rotate(75deg); }
+.sobre2 { transform: rotate(70deg); }
+.sobre3 { transform: rotate(65deg); }
+.sobre4 { transform: rotate(60deg); }
+.sobre5 { transform: rotate(55deg); }
 
 /* Letras da palavra habilidades */
-.hab1 { transform: rotate(15deg); }
-.hab2 { transform: rotate(10deg); }
-.hab3 { transform: rotate(5deg); }
-.hab4 { transform: rotate(0deg); }
-.hab5 { transform: rotate(-5deg); }
-.hab6 { transform: rotate(-10deg); }
-.hab7 { transform: rotate(-15deg); }
-.hab8 { transform: rotate(-20deg); }
-.hab9 { transform: rotate(-25deg); }
-.hab10 { transform: rotate(-30deg); }
-.hab11 { transform: rotate(-35deg); }
+.hab1 { transform: rotate(25deg); }
+.hab2 { transform: rotate(20deg); }
+.hab3 { transform: rotate(15deg); }
+.hab4 { transform: rotate(10deg); }
+.hab5 { transform: rotate(5deg); }
+.hab6 { transform: rotate(0deg); }
+.hab7 { transform: rotate(-5deg); }
+.hab8 { transform: rotate(-10deg); }
+.hab9 { transform: rotate(-15deg); }
+.hab10 { transform: rotate(-20deg); }
+.hab11 { transform: rotate(-25deg); }
 
-.projetos-container{
-    transform: rotate(10deg);
-}
-
-.projetos-container span{
-    height: 200px;
-    left: 55px;
-    top: -155px;
-}
-
+/* Letras da palavra projetos */
+.proj1 { transform: rotate(-43deg); }
+.proj2 { transform: rotate(-48deg); }
+.proj3 { transform: rotate(-53deg); }
+.proj4 { transform: rotate(-58deg); }
+.proj5 { transform: rotate(-63deg); }
+.proj6 { transform: rotate(-68deg); }
+.proj7 { transform: rotate(-73deg); }
+.proj8 { transform: rotate(-78deg); }
 
 main{
     margin: 0 -6px -6px -7px;
 }
 
 table{
+    /* visibility: hidden; */
+    /* display: none; */
     width: 100%;
     table-layout: fixed;
+}
+
+.sobre-table{
+    visibility: hidden;
+}
+
+.sobre-activator{
+    transform: rotate(-25deg);
+    position: absolute;
+    top: 345px;
+    left: 355px;
+    height: 70px;
+    width: 20px;
+    background: rgba(242, 226, 226, 0.3);
+}
+
+.sobre-activator:hover ~ .sobre-table{
+    visibility: visible;
+    /* display: block; */
+    /* background-color: lightblue; */
+    /* color: rebeccapurple; */
 }
 
 form input, textarea{
     display: block;
     margin-bottom: 1em;
     width: 60%;
+}
+
+h3 ion-icon{
+    position: relative;
+    top: 3px;
 }
 
 .table-titles{
@@ -135,3 +145,4 @@ form input, textarea{
 .btn{
     width: 61%;
 }
+
