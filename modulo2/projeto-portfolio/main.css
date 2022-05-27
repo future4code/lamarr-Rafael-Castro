@@ -1,10 +1,13 @@
 body{
     background-image: url(img/fjord01.jpg);
+    background-repeat: no-repeat;
     background-color: rgba(0, 15, 144, 0.8);
     background-size: cover;
+    /* background-size: 100vw 100vh; */
     font-size: large;
 }
 
+/* NAVBAR */
 nav{
     display: flex;
     height: 2.5em;
@@ -14,27 +17,36 @@ nav{
     border-radius: 0 0 10px 10px;
 }
 
-header{
+.nav-items{
+    margin: 0 15px 0 15px;
+}
+
+
+/* HEADER */
+.hero{
     display: flex;
     background: rgba(0, 127, 66, 0.8);
     height: 500px;
-    margin: 19px -5px 2px -5px;
+    width: 60%;
+    margin: 18px auto;
+    /* margin-top: 19px; */
     justify-content: center;
     align-items: center;
     border-radius: 10px;
 }
 
-header h2{
+.hero h2{
     align-self: start;
+    text-align: center;
 }
 
-.d-logo{
+.d-logo-container{
     position: absolute;
     height: 250px;
     top: 200px;
 }
 
-.d-logo img{
+.d-logo-container img{
     height: 100%;
 }
 
@@ -81,13 +93,87 @@ header h2{
 .proj7 { transform: rotate(-73deg); }
 .proj8 { transform: rotate(-78deg); }
 
+/* Main */
 main{
     margin: 0 -6px -6px -7px;
 }
 
-table{
-    /* visibility: hidden; */
+.main-card{
+    background: rgba(0, 35, 74, 0.9);
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px 60px;
+    font-size: 1.5em;
+}
+
+.card-sobre{
     /* display: none; */
+}
+
+ul{
+    list-style:none;
+    padding: 0;
+}
+
+form input, textarea{
+    width: 60%;
+    position: relative;
+    right: -40px;
+}
+
+textarea{
+    right: -120px;
+}
+
+form{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.btn{
+    position: relative;
+    left: 120px;
+    width: 61%;
+}
+
+h3 ion-icon{
+    position: relative;
+    top: 3px;
+}
+
+/* AUXILIARY CLASSES */
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+
+
+
+
+/* .main-section, .main-section-head{
+    background: rgba(0, 35, 74, 0.9);
+    vertical-align: top;
+    border-radius: 10px;
+}
+
+.main-section{
+    padding: 20px 20px 20px 40px;
+} */
+
+/* table{
+    visibility: hidden;
+    display: none;
     width: 100%;
     table-layout: fixed;
 }
@@ -108,41 +194,7 @@ table{
 
 .sobre-activator:hover ~ .sobre-table{
     visibility: visible;
-    /* display: block; */
-    /* background-color: lightblue; */
-    /* color: rebeccapurple; */
-}
-
-form input, textarea{
     display: block;
-    margin-bottom: 1em;
-    width: 60%;
-}
-
-h3 ion-icon{
-    position: relative;
-    top: 3px;
-}
-
-.table-titles{
-    margin-top: 2em;
-}
-
-.nav-items{
-    margin: 0 15px 0 15px;
-}
-
-.main-section, .main-section-head{
-    background: rgba(0, 35, 74, 0.9);
-    vertical-align: top;
-    border-radius: 10px;
-}
-
-.main-section{
-    padding: 20px 20px 20px 40px;
-}
-
-.btn{
-    width: 61%;
-}
-
+    background-color: lightblue;
+    color: rebeccapurple;
+} */
