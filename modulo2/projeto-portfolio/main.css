@@ -38,6 +38,8 @@ nav{
 .hero h2{
     align-self: start;
     text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .d-logo-container{
@@ -107,8 +109,10 @@ main{
     font-size: 1.5em;
 }
 
+
+/* CARD - SOBRE */
 .card-sobre{
-    /* display: none; */
+    display: block; /* block || none */
 }
 
 ul{
@@ -143,8 +147,34 @@ h3 ion-icon{
     top: 3px;
 }
 
-/* AUXILIARY CLASSES */
 
+/* CARD - HABILIDADES */
+.card-hab-inner{
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.card-hab-outter{
+    display: block; /* block || none */
+}
+
+
+/* CARD - PROJETOS */
+.card-projetos{
+    display: flex;  /* flex || none */
+    height: 500px;
+    gap: 50px;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    padding-top: 60px;
+    text-align: center;
+}
+
+
+/* AUXILIARY CLASSES */
 .text-center{
     text-align: center;
 }
