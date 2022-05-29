@@ -1,9 +1,8 @@
 body{
-    background-image: url(img/fjord01.jpg);
+    background-image: url(img/fjord02a.jpg);
     background-repeat: no-repeat;
     background-color: rgba(0, 15, 144, 0.8);
-    background-size: cover;
-    /* background-size: 100vw 100vh; */
+    background-size: 100vw auto;
     font-size: large;
 }
 
@@ -26,10 +25,10 @@ nav{
 .hero{
     display: flex;
     background: rgba(0, 127, 66, 0.8);
+    color: rgb(163, 208, 182);
     height: 500px;
     width: 60%;
     margin: 18px auto;
-    /* margin-top: 19px; */
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -95,9 +94,11 @@ nav{
 .proj7 { transform: rotate(-73deg); }
 .proj8 { transform: rotate(-78deg); }
 
-/* Main */
+
+/* MAIN */
 main{
     margin: 0 -6px -6px -7px;
+    color: rgb(130, 147, 159);
 }
 
 .main-card{
@@ -109,8 +110,19 @@ main{
     font-size: 1.5em;
 }
 
-#expand-btn{
+
+/* EXPAND BUTTONS */
+/* Sobre */
+#sobre-expand-btn{
     display: block;
+    position: absolute;
+    height: 2.5em;
+    width: 5em;
+    top: 26.4%;
+    left: 42.9%;
+    transform: rotate(64deg);
+    cursor: pointer;
+    /* background-color: rgba(156, 97, 97, 0.5); */
 }
 
 #sobre-expand:checked ~ .card-sobre, #sobre-expand:checked ~ * .card-sobre{
@@ -126,7 +138,68 @@ main{
 }
 
 #sobre-expand{
-    /* display: none; */
+    display: none;
+}
+
+/* Habilidades */
+#hab-expand-btn{
+    display: block;
+    position: absolute;
+    height: 3em;
+    width: 10em;
+    top: 32.5%;
+    left: 46.7%;
+    cursor: pointer;
+    /* background-color: rgba(156, 97, 97, 0.5); */
+}
+
+#hab-expand:checked ~ .card-sobre, #hab-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#hab-expand:checked ~ .card-hab-outter, #hab-expand:checked ~ * .card-hab-outter{
+    display: block;
+}
+
+#hab-expand:checked ~ .card-projetos, #hab-expand:checked ~ * .card-projetos{
+    display: none;
+}
+
+#hab-expand{
+    display: none;
+}
+
+/* Projetos */
+#proj-expand{
+    display: none;
+}
+
+#proj-expand-btn{
+    display: block;
+    position: absolute;
+    height: 2.5em;
+    width: 8em;
+    top: 26.6%;
+    left: 52.6%;
+    transform: rotate(-60deg);
+    cursor: pointer;
+    /* background-color: rgba(156, 97, 97, 0.5); */
+}
+
+#proj-expand:checked ~ .card-sobre, #proj-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#proj-expand:checked ~ .card-hab-outter, #proj-expand:checked ~ * .card-hab-outter{
+    display: none;
+}
+
+#proj-expand:checked ~ .card-projetos, #proj-expand:checked ~ * .card-projetos{
+    display: block;
+}
+
+#proj-expand{
+    display: none;
 }
 
 
@@ -178,7 +251,7 @@ h3 ion-icon{
 }
 
 .card-hab-outter{
-    display: none; /* block || none */
+    display: block; /* block || none */
 }
 
 
@@ -188,8 +261,7 @@ h3 ion-icon{
     height: 500px;
     gap: 50px;
     justify-content: space-around;
-    margin-bottom: 40px;
-    padding-top: 60px;
+    padding-bottom: 50px;
     text-align: center;
 }
 
@@ -207,44 +279,10 @@ h3 ion-icon{
     text-align: right;
 }
 
-
-
-
-
-/* .main-section, .main-section-head{
-    background: rgba(0, 35, 74, 0.9);
-    vertical-align: top;
-    border-radius: 10px;
+.disable-select{
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
-
-.main-section{
-    padding: 20px 20px 20px 40px;
-} */
-
-/* table{
-    visibility: hidden;
-    display: none;
-    width: 100%;
-    table-layout: fixed;
-}
-
-.sobre-table{
-    visibility: hidden;
-}
-
-.sobre-activator{
-    transform: rotate(-25deg);
-    position: absolute;
-    top: 345px;
-    left: 355px;
-    height: 70px;
-    width: 20px;
-    background: rgba(242, 226, 226, 0.3);
-}
-
-.sobre-activator:hover ~ .sobre-table{
-    visibility: visible;
-    display: block;
-    background-color: lightblue;
-    color: rebeccapurple;
-} */

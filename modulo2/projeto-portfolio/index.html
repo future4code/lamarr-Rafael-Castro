@@ -54,8 +54,18 @@
     </header>
 
     <main>
-        <input type="checkbox" id="sobre-expand">
-        <p><label for="sobre-expand" id="expand-btn">Sobre</label></p>
+        <!-- EXPAND BUTTONS -->
+        <input type="radio" name="card-options" id="sobre-expand">
+        <p><label for="sobre-expand" id="sobre-expand-btn" class="disable-select"></label></p>
+
+        <input type="radio" name="card-options" id="hab-expand">
+        <p><label for="hab-expand" id="hab-expand-btn" class="disable-select"></label></p>
+
+        <input type="radio" name="card-options" id="proj-expand">
+        <p><label for="proj-expand" id="proj-expand-btn" class="disable-select"></label></p>
+
+        
+        <!-- CARDS -->
         <div class="main-card card-sobre">
             <h3 class="text-center"><u><em>Sobre Mim</em></u></h3>
             <h4 class="text-center"><strong>Amo ficção científica, literatura fantástica, filosofia, tecnologia e jogos.</strong></h4>
@@ -140,6 +150,11 @@
         </div>
 
         <div class="main-card card-projetos">
+            <h3 class="text-center"><u><em>Projetos</em></u></h3>
+            <div>
+                <h3><ion-icon name="school"></ion-icon> Instituições de ensino</h3>
+                <p>Labenu</p>
+            </div>
             <div>
                 <h3><ion-icon name="layers"></ion-icon> Projetos desenvolvidos</h3>
                 <p>...</p>
@@ -147,10 +162,6 @@
             <div>
                 <h3><ion-icon name="briefcase"></ion-icon> Empregadores prévios</h3>
                 <p>...</p>
-            </div>
-            <div>
-                <h3><ion-icon name="school"></ion-icon> Instituições de ensino</h3>
-                <p>Labenu</p>
             </div>
         </div>
     </main>
