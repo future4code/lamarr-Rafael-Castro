@@ -6,21 +6,6 @@ body{
     font-size: large;
 }
 
-/* NAVBAR */
-nav{
-    display: flex;
-    height: 2.5em;
-    background: rgba(0, 35, 74, 0.9);
-    margin: -8px -8px -16px -8px;
-    align-items: center;
-    border-radius: 0 0 10px 10px;
-}
-
-.nav-items{
-    margin: 0 15px 0 15px;
-}
-
-
 /* HEADER */
 .hero{
     display: flex;
@@ -28,7 +13,7 @@ nav{
     color: rgb(163, 208, 182);
     height: 500px;
     width: 60%;
-    margin: 18px auto;
+    margin: 15px auto;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
