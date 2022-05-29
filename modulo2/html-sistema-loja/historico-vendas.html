@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adicionar Produto</title>
+    <title>Histórico</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
@@ -21,35 +21,53 @@
         <div class="v-line"></div>
         <a href="historico-vendas.html">Histórico</a>
     </nav>
-    
+
     <header>
         <h1>Lujinha Daskina</h1>
+        <h3>Histórico de vendas</h3>
     </header>
-    
+
     <main>
-        <h2>Adicionar Produto</h2>
-        <form action="">
-            <label for="link-foto">Link para foto: </label>
-            <input type="url" id="link-foto" name="link-foto">
-            <br>
+        <label for="filtro">Filtrar</label>
+        <input id="filtro" type="date">
 
-            <label for="descricao">Descrição do produto: </label>
-            <!-- Adicione o id apropriado para o input abaixo -->
-            <input type="text" id="descricao" name="descrição">
-            <br>
-            <label for="preco">Preço (em R$): </label>
-            <!-- Adicione o id apropriado e o type para receber números abaixo -->
-            <input type="number" id="preco" name="preço">
-            <br>
-
-            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
-            <label for="quantidade">Quantidade disponível: </label>
-            <input type="number" id="quantidade" name="quantidade">
-
-            <br>
-            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-            <button type="submit">Adicionar</button>
-        </form>
+        <table>
+            <tr>
+                <td>Data</td>
+                <td>Horário</td>
+                <td>Funcionário</td>
+                <td>Total</td>
+                <td>Pagamento</td>
+            </tr>
+            <tr>
+                <td>30/01/2022</td>
+                <td>20:00</td>
+                <td>Mike Oxmol</td>
+                <td>500</td>
+                <td>cartão</td>
+            </tr>
+            <tr>
+                <td>14/01/2022</td>
+                <td>10:00</td>
+                <td>Phil Mcrakin</td>
+                <td>100</td>
+                <td>dinheiro</td>
+            </tr>
+            <tr>
+                <td>06/01/2022</td>
+                <td>18:00</td>
+                <td>Jerq Meof</td>
+                <td>1500</td>
+                <td>cartão</td>
+            </tr>
+            <tr>
+                <td>01/01/2022</td>
+                <td>16:00</td>
+                <td>Hugh Janus</td>
+                <td>1200</td>
+                <td>dinheiro</td>
+            </tr>
+        </table>
     </main>
 
     <footer>

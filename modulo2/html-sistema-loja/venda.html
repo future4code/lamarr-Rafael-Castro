@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lujinha Daskina</title>
+    <title>Venda</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
+
 <body>
     <nav>
         <a href="index.html">Página Inicial</a>
@@ -23,8 +24,33 @@
     </nav>
 
     <header>
-        <h1>Bem-vindos a <em>Lujinha Daskina</em>!</h1>
+        <h1>Lujinha Daskina</h1>
+        <h3>Registrar venda</h3>
     </header>
+    
+    <main>
+        <form action="">
+            <label for="vendedor">Vendedor:</label>
+            <input id="vendedor" type="text">
+            <br>
+            <label for="produtos">Produto:</label>
+            <select name="" id="produtos">
+                <option value="PS4 Controller">PS4 Controller</option>
+                <option value="PS5 Controller">PS5 Controller</option>
+                <option value="VR Headset">VR Headset</option>
+                <option value="HDMI Adapter">HDMI Adapter</option>
+                <option value="PS4 Pro">PS4 Pro</option>
+            </select>
+            <br>
+            <label for="pagamento">Forma de pagamento:</label>
+            <select name="" id="pagamento">
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cartao">Cartão</option>
+            </select>
+            <br>
+            <input type="button" value="Efetivar">
+        </form>
+    </main>
 
     <footer>
         <p>Siga-nos nas redes sociais!</p>
