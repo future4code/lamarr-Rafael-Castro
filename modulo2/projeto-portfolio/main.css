@@ -109,10 +109,30 @@ main{
     font-size: 1.5em;
 }
 
+#expand-btn{
+    display: block;
+}
+
+#sobre-expand:checked ~ .card-sobre, #sobre-expand:checked ~ * .card-sobre{
+    display: block;
+}
+
+#sobre-expand:checked ~ .card-hab-outter, #hab.card-hab-outter-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#sobre-expand:checked ~ .card-projetos, #hab.card-projetos-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#sobre-expand{
+    /* display: none; */
+}
+
 
 /* CARD - SOBRE */
 .card-sobre{
-    display: block; /* block || none */
+    display: none; /* block || none */
 }
 
 ul{
@@ -158,13 +178,13 @@ h3 ion-icon{
 }
 
 .card-hab-outter{
-    display: block; /* block || none */
+    display: none; /* block || none */
 }
 
 
 /* CARD - PROJETOS */
 .card-projetos{
-    display: flex;  /* flex || none */
+    display: none;  /* flex || none */
     height: 500px;
     gap: 50px;
     justify-content: space-around;
