@@ -6,6 +6,23 @@ body{
     font-size: large;
 }
 
+/* NAVBAR */
+nav{
+    display: flex;
+    height: 2.5em;
+    background: rgba(0, 35, 74, 0.9);
+    margin: -8px -8px -16px -8px;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+    justify-content: center;
+}
+
+.nav-items{
+    margin: 0 15px 0 15px;
+    font-size: larger;
+    color: rgb(130, 147, 159);
+}
+
 /* HEADER */
 .hero{
     display: flex;
@@ -13,7 +30,7 @@ body{
     color: rgb(163, 208, 182);
     height: 550px;
     width: 60%;
-    margin: 15px auto;
+    margin: 20px auto;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -267,6 +284,7 @@ form{
 /* PÁGINA LOJINHA */
 
 .card-lojinha{
+    margin-top: 20px;
     padding-bottom: 50px;
     color: rgb(130, 147, 159);
 }
