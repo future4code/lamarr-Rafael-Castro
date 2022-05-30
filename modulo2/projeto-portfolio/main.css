@@ -106,7 +106,7 @@ main{
 .main-card{
     background: rgba(0, 35, 74, 0.9);
     width: 50%;
-    margin: auto;
+    margin:  -100px auto;
     border-radius: 10px;
     padding: 20px 60px;
     font-size: 1.5em;
@@ -119,17 +119,27 @@ main{
 
 
 /* EXPAND BUTTONS */
+
+.expand-btn-container{
+    display: flex;
+    position: relative;
+    top: -200px;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+}
+
 /* Sobre */
 #sobre-expand-btn{
     display: block;
-    position: absolute;
     height: 2.5em;
     width: 5em;
-    top: 359px;
-    left: 885px;
+    position: relative;
+    top: -77px;
+    left: 10px;
     transform: rotate(64deg);
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.1);  /* Atributo habilitado para garantir que link ficará visivel, pois página ainda não tem responsividade. */
+    /* background-color:rgba(255, 255, 255, 0.1); */
 }
 
 #sobre-expand:checked ~ .card-sobre, #sobre-expand:checked ~ * .card-sobre{
@@ -150,14 +160,13 @@ main{
 
 /* Habilidades */
 #hab-expand-btn{
-    display: block;
-    position: absolute;
     height: 3em;
     width: 10em;
-    top: 440px;
-    left: 990px;
+    display: block;
+    right: -20px;
+    position: relative;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.1); /* Atributo habilitado para garantir que link ficará visivel, pois página ainda não tem responsividade. */
+    /* background-color:rgba(255, 255, 255, 0.1); */
 }
 
 #hab-expand:checked ~ .card-sobre, #hab-expand:checked ~ * .card-sobre{
@@ -183,14 +192,14 @@ main{
 
 #proj-expand-btn{
     display: block;
-    position: absolute;
     height: 2.5em;
-    width: 8em;
-    top: 360px;
-    left: 1150px;
+    width: 7em;
+    position: relative;
+    top: -70px;
+    left: 10px;
     transform: rotate(-60deg);
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.1); /* Atributo habilitado para garantir que link ficará visivel, pois página ainda não tem responsividade. */
+    /* background-color:rgba(255, 255, 255, 0.1); */
 }
 
 #proj-expand:checked ~ .card-sobre, #proj-expand:checked ~ * .card-sobre{
