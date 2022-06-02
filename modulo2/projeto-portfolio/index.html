@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Davant</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav>
+        <a class="nav-items" href="">Sobre</a>
+        <a class="nav-items" href="">Habilidades</a>
+        <a class="nav-items" href="">Projetos & XP</a>
+    </nav>
+    <header>
+        <div class="hero">
+            <h2>Olá, meu nome é <em>Rafael Davant</em>. Sou um Desenvolvedor Fullstack Jr. situado em São Paulo.</h2>
+            <div class="d-logo-container">
+                <img src="staging-imgs/D-Caligraphy.png" alt="Logo letra D">
+                <h3 class="letter-container">
+                    <span class="sobre1">S</span>
+                    <span class="sobre2">O</span>
+                    <span class="sobre3">B</span>
+                    <span class="sobre4">R</span>
+                    <span class="sobre5">E</span>
+                </h3>
+                <h3 class="letter-container">
+                    <span class="hab1">H</span>
+                    <span class="hab2">A</span>
+                    <span class="hab3">B</span>
+                    <span class="hab4">I</span>
+                    <span class="hab5">L</span>
+                    <span class="hab6">I</span>
+                    <span class="hab7">D</span>
+                    <span class="hab8">A</span>
+                    <span class="hab9">D</span>
+                    <span class="hab10">E</span>
+                    <span class="hab11">S</span>
+                </h3>
+                <h3 class="letter-container">
+                    <span class="proj1">P</span>
+                    <span class="proj2">R</span>
+                    <span class="proj3">O</span>
+                    <span class="proj4">J</span>
+                    <span class="proj5">E</span>
+                    <span class="proj6">T</span>
+                    <span class="proj7">O</span>
+                    <span class="proj8">S</span>
+                </h3>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- EXPAND BUTTONS -->
+        <div class="expand-btn-container">
+            <p><label for="sobre-expand" id="sobre-expand-btn" class="disable-select"></label></p>
+            <p><label for="hab-expand" id="hab-expand-btn" class="disable-select"></label></p>
+            <p><label for="proj-expand" id="proj-expand-btn" class="disable-select"></label></p>
+        </div>
+        
+        <input type="radio" name="card-options" id="sobre-expand">
+        <input type="radio" name="card-options" id="hab-expand">
+        <input type="radio" name="card-options" id="proj-expand">
+        
+        <!-- CARDS -->
+        <div class="main-card card-sobre">
+            <h3 class="text-center"><u><em>Sobre Mim</em></u></h3>
+            <h4 class="text-center"><strong>Amo ficção científica, literatura fantástica, filosofia, tecnologia e jogos.</strong></h4>
+            <br>
+            <h3 class="text-center""><ion-icon name="accessibility"></ion-icon> Habilidades comportamentais</h3>
+            <ul>
+                <li class="text-left"><strong><em>Resiliência</em></strong></li>
+                <p class="text-left">Diante das adversidades e do desconhecido, sempre manter a constância.</p>
+                <br>
+                <br>
+                <li class="text-right"><strong><em>Adaptabilidade</em></strong></li>
+                <p class="text-right">Manter-se flexível para prosperar em qualquer terreno.</p>
+                <br>
+                <br>
+                <li class="text-left"><strong><em>Pesquisa</em></strong></li>
+                <p class="text-left">Cultivo a capacidade de aprender e aprofundar de forma autonoma.</p>
+                <br>
+                <br>
+                <li class="text-right"><strong><em>Mentalidade de crescimento</em></strong></li>
+                <p class="text-right">Manter em mente a nossa plasticidade neural, sempre podemos melhorar.</p>
+            </ul>
+            <br>
+            <h3 class="text-center">Contato</h3>
+            <form action="">
+                <label for="name">Nome: </label>
+                <input type="text" size= "30" id="name">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" size= "30" name="" id="email">
+                <br>
+                <br>
+                <label for="msg">Mensagem:</label>
+                <br>
+                <textarea name="" id="msg" cols="30" rows="7"></textarea>
+                <br>
+                <button class="btn"><ion-icon size="small" name="paper-plane"></ion-icon></button>
+            </form>
+            <div class="social-medias">
+                <a href="https://github.com/RafaelDavant"><ion-icon size="large" name="logo-github"></ion-icon></a>
+                <a href="https://www.linkedin.com/in/rafael-castro-3553a8125/"><ion-icon size="large" name="logo-linkedin"></ion-icon></a>
+                <a href="mailto:raphaeldavant@hotmail.com"><ion-icon size="large" name="mail"></ion-icon></a>
+            </div>
+        </div>
+
+        <div class="main-card card-hab-outter">
+            <h3 class="text-center"><u><em>Habilidades</em></u></h3>
+            <div class="card-hab-inner">
+                <div class="tecnologias">
+                    <h3><ion-icon name="code-slash"></ion-icon> Tecnologias</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>JavaScript</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Bootstrap</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+    
+                <div class="ferramentas">
+                    <h3><ion-icon name="construct"></ion-icon> Ferramentas</h3>
+                    <ul>
+                        <li>VSCode</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Codepen</li>
+                    </ul>
+                </div>
+    
+                <div class="idiomas">
+                    <h3><ion-icon name="language"></ion-icon> Idiomas</h3>
+                    <ul>
+                        <li>Inglês fluente</li>
+                    </ul>
+                </div>
+    
+                <div class="estudos">
+    
+                    <h3><ion-icon name="book"></ion-icon> Estudos</h3>
+                    <ul>
+                        <li>4 Bootcamps</li>
+                        <li>2 Cursos de curta duração</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-card card-projetos">
+            <h3 class="text-center"><u><em>Projetos</em></u></h3>
+            <div>
+                <h3><ion-icon name="school"></ion-icon> Instituições de ensino</h3>
+                <p>Labenu</p>
+            </div>
+            <div>
+                <h3><ion-icon name="layers"></ion-icon> Projetos desenvolvidos</h3>
+                <ul>
+                    <li><a href="lojinha.html">Lojinha Daskina</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3><ion-icon name="briefcase"></ion-icon> Empregadores prévios</h3>
+                <p>...</p>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

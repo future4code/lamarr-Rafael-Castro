@@ -1,0 +1,329 @@
+body{
+    background-image: url(img/fjord02a.jpg);
+    background-repeat: no-repeat;
+    background-color: rgba(0, 15, 144, 0.8);
+    background-size: 100vw auto;
+    font-size: large;
+}
+
+/* NAVBAR */
+nav{
+    display: flex;
+    height: 2.5em;
+    background: rgba(0, 35, 74, 0.9);
+    margin: -8px -8px -16px -8px;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+    justify-content: center;
+}
+
+.nav-items{
+    margin: 0 15px 0 15px;
+    font-size: larger;
+    color: rgb(130, 147, 159);
+}
+
+/* HEADER */
+.hero{
+    display: flex;
+    background: rgba(0, 127, 66, 0.8);
+    color: rgb(163, 208, 182);
+    height: 550px;
+    width: 60%;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.hero h2{
+    align-self: start;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.d-logo-container{
+    position: absolute;
+    height: 250px;
+    top: 200px;
+}
+
+.d-logo-container img{
+    height: 100%;
+}
+
+.letter-container span {
+    height: 180px;
+    left: 82px;
+    top: 110px;
+    display: flex;
+    align-items: flex-end;
+    font: 26px Monaco, MonoSpace;
+    position: absolute;
+    width: 12px;
+    transform-origin: top center;
+    /* border: dotted white; */
+}
+
+/* Letras da palavra sobre */
+.sobre1 { transform: rotate(75deg); }
+.sobre2 { transform: rotate(70deg); }
+.sobre3 { transform: rotate(65deg); }
+.sobre4 { transform: rotate(60deg); }
+.sobre5 { transform: rotate(55deg); }
+
+/* Letras da palavra habilidades */
+.hab1 { transform: rotate(25deg); }
+.hab2 { transform: rotate(20deg); }
+.hab3 { transform: rotate(15deg); }
+.hab4 { transform: rotate(10deg); }
+.hab5 { transform: rotate(5deg); }
+.hab6 { transform: rotate(0deg); }
+.hab7 { transform: rotate(-5deg); }
+.hab8 { transform: rotate(-10deg); }
+.hab9 { transform: rotate(-15deg); }
+.hab10 { transform: rotate(-20deg); }
+.hab11 { transform: rotate(-25deg); }
+
+/* Letras da palavra projetos */
+.proj1 { transform: rotate(-43deg); }
+.proj2 { transform: rotate(-48deg); }
+.proj3 { transform: rotate(-53deg); }
+.proj4 { transform: rotate(-58deg); }
+.proj5 { transform: rotate(-63deg); }
+.proj6 { transform: rotate(-68deg); }
+.proj7 { transform: rotate(-73deg); }
+.proj8 { transform: rotate(-78deg); }
+
+
+/* MAIN */
+main{
+    margin: 0 -6px -6px -7px;
+    color: rgb(130, 147, 159);
+}
+
+.main-card{
+    background: rgba(0, 35, 74, 0.9);
+    width: 50%;
+    margin:  -100px auto;
+    border-radius: 10px;
+    padding: 20px 60px;
+    font-size: 1.5em;
+}
+
+.main-card ion-icon{
+    position: relative;
+    top: 4px;
+}
+
+
+/* EXPAND BUTTONS */
+
+.expand-btn-container{
+    display: flex;
+    position: relative;
+    top: -200px;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+}
+
+/* Sobre */
+#sobre-expand-btn{
+    display: block;
+    height: 2.5em;
+    width: 5em;
+    position: relative;
+    top: -77px;
+    left: 10px;
+    transform: rotate(64deg);
+    cursor: pointer;
+    /* background-color:rgba(255, 255, 255, 0.1); */
+}
+
+#sobre-expand:checked ~ .card-sobre, #sobre-expand:checked ~ * .card-sobre{
+    display: block;
+}
+
+#sobre-expand:checked ~ .card-hab-outter, #hab.card-hab-outter-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#sobre-expand:checked ~ .card-projetos, #hab.card-projetos-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#sobre-expand{
+    display: none;
+}
+
+/* Habilidades */
+#hab-expand-btn{
+    height: 3em;
+    width: 10em;
+    display: block;
+    right: -20px;
+    position: relative;
+    cursor: pointer;
+    /* background-color:rgba(255, 255, 255, 0.1); */
+}
+
+#hab-expand:checked ~ .card-sobre, #hab-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#hab-expand:checked ~ .card-hab-outter, #hab-expand:checked ~ * .card-hab-outter{
+    display: block;
+}
+
+#hab-expand:checked ~ .card-projetos, #hab-expand:checked ~ * .card-projetos{
+    display: none;
+}
+
+#hab-expand{
+    display: none;
+}
+
+/* Projetos */
+#proj-expand{
+    display: none;
+}
+
+#proj-expand-btn{
+    display: block;
+    height: 2.5em;
+    width: 7em;
+    position: relative;
+    top: -70px;
+    left: 10px;
+    transform: rotate(-60deg);
+    cursor: pointer;
+    /* background-color:rgba(255, 255, 255, 0.1); */
+}
+
+#proj-expand:checked ~ .card-sobre, #proj-expand:checked ~ * .card-sobre{
+    display: none;
+}
+
+#proj-expand:checked ~ .card-hab-outter, #proj-expand:checked ~ * .card-hab-outter{
+    display: none;
+}
+
+#proj-expand:checked ~ .card-projetos, #proj-expand:checked ~ * .card-projetos{
+    display: block;
+}
+
+#proj-expand{
+    display: none;
+}
+
+
+/* CARD - SOBRE */
+.card-sobre{
+    display: none; /* block || none */
+    padding-bottom: 40px;
+}
+
+.card-sobre ul{
+    list-style: none;
+}
+
+form input, textarea{
+    width: 60%;
+    position: relative;
+    right: -40px;
+}
+
+textarea{
+    right: -120px;
+}
+
+form{
+    margin: auto;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.btn{
+    position: relative;
+    left: 120px;
+    width: 61%;
+}
+
+.social-medias{
+    text-align: center;
+}
+
+
+/* CARD - HABILIDADES */
+.card-hab-inner{
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.card-hab-outter ul{
+    list-style:none;
+    padding: 0;
+}
+
+.card-hab-outter{
+    display: block; /* block || none */
+}
+
+
+/* CARD - PROJETOS */
+.card-projetos{
+    display: none;  /* flex || none */
+    height: 500px;
+    gap: 50px;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.card-projetos ul{
+    list-style: inside;
+}
+
+
+/* PÁGINA LOJINHA */
+
+.card-lojinha{
+    margin-top: 20px;
+    padding-bottom: 50px;
+    color: rgb(130, 147, 159);
+}
+
+.imgs-container{
+    text-align: center;
+}
+
+.card-lojinha img{
+    max-height: 300px;
+}
+
+
+/* AUXILIARY CLASSES */
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.disable-select{
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
