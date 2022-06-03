@@ -1,0 +1,65 @@
+/* INDEX PAGE */
+header{
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 50px;
+    justify-items: end;
+    align-items: center;
+    background-color: orange;
+    
+}
+
+header a{
+    text-decoration: none;
+}
+
+header input{
+    width: 70px;
+    margin: 20px 40px;
+    padding-left: 10px;
+}
+
+.main-index{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 20px;
+}
+
+.index-card{
+    display: grid;
+    border: 1px green solid;
+    font-size: 16px;
+}
+
+.index-card img{
+    width: 100%;
+}
+
+footer{
+    display: grid;
+    align-items: center;
+    grid-template-rows: 50px;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 30px;
+}
+
+
+/* VIDEOS PAGES */
+
+.videos-main{
+    display: grid;
+    grid-template-rows: 10px 1fr 0.3fr;
+    margin: 30px 20px;
+    align-items: center;
+    gap: 40px;
+    font-size: 16px;
+}
+
+.videos-main video{
+    width: 100%;
+}
