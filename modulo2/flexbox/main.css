@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+}
+
+body{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.navbar{
+    display: flex;
+    background-color: mediumvioletred;
+    height: 76px;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.navbar img{
+    max-height: 25px;
+    margin-left: 30px;
+}
+
+.login-btn{
+    margin-left: auto;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+aside{
+    display: flex;
+    height: 100vh;
+    width: 360px;
+    background-color: #f2d0e0;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 20px;
+    font-size: 20px;
+    font-weight:600;
+}
+
+aside a{
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+
+aside a:first-child{
+    margin-top: 20px;
+}
+
+.icos{
+    max-height: 24px;
+    margin: 0 10px;
+    margin-right: 15px;
+}
+
+.arrow-right{
+    margin-left: auto;
+}
+
+main{
+    width: 76%;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 20px 20px;
+    margin: 25px;
+}
+
+.cake-card{
+    height: 440px;
+    width: 310px;
+    font-size: 25px;
+    text-align: center;
+    box-shadow: 2px 2px 5px darkgray;
+}
+
+.cake-card p{
+    font-size: 20px;
+}
+
+.cake-card img{
+    max-width: 100%;
+}
+
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: mediumvioletred;
+    height: 45px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
