@@ -27,16 +27,29 @@ export const MainHeaderLogo = styled.div`
     height: 48px;
 `
 
-export const MainCenter = styled.div`
+export const MainBody = styled.div`
     background-color: white;
     width: 70vw;
     height: 90vh;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: end;
     gap: 10px;
     padding-bottom: 2vh;
+    overflow: hidden;
 `
+
+export const MainMessageField = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: end;
+`
+
+export const MsgSlot = styled.p`
+    visibility: ${props => props.hiddenComment ? 'hidden' : 'visible'};
+`
+
 export const InputStyle = styled.input`
     width: ${props => props.message ? '30vw' : '10vw'};
 `

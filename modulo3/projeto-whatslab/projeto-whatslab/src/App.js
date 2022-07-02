@@ -14,9 +14,9 @@ function App() {
           <h1>LabZap</h1>
         </All.MainHeader>
         
-        <All.MainCenter>
+        <All.MainBody>
           <Messaging/>
-        </All.MainCenter>
+        </All.MainBody>
         
         <FooterComponent/>
       </All.Main>
