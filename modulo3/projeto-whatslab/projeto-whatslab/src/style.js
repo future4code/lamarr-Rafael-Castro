@@ -16,7 +16,7 @@ export const MainHeader = styled.header`
     gap: 5px;
     background-color: white;
     width: 100vw;
-    height: 7vh;
+    height: 7vh;        // Change to pixels
 `
 
 export const MainHeaderLogo = styled.div`
@@ -47,7 +47,7 @@ export const MainMessageField = styled.div`
 `
 
 export const MsgSlot = styled.p`
-    visibility: ${props => props.hiddenComment ? 'hidden' : 'visible'};
+    visibility: ${props => props.hiddenSlot ? 'hidden' : 'visible'};
 `
 
 export const InputStyle = styled.input`
