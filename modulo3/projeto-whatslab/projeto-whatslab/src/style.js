@@ -43,11 +43,11 @@ export const MainMessageField = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: end;
+    overflow: auto;
 `
 
-export const MsgSlot = styled.p`
-    visibility: ${props => props.hiddenSlot ? 'hidden' : 'visible'};
+export const MessageP = styled.p`
+    align-self: ${props => props.isItMe ? 'flex-end' : 'flex-start'};
 `
 
 export const InputStyle = styled.input`
