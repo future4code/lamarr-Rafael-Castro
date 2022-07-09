@@ -11,7 +11,7 @@ function App() {
       <All.Main>
         <All.MainHeader>
           <All.MainHeaderLogo backgroundImage={labeLogo}/>
-          <h1>LabZap</h1>
+          <h1>WhatsLab</h1>
         </All.MainHeader>
         
         <All.MainBody>

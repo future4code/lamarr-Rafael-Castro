@@ -12,11 +12,11 @@ export const Main = styled.main`
 export const MainHeader = styled.header`
     display: flex;
     justify-content: center;
-    align-items: baseline;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
     background-color: white;
     width: 100vw;
-    height: 7vh;        // Change to pixels
+    height: 60px;
 `
 
 export const MainHeaderLogo = styled.div`
@@ -30,7 +30,7 @@ export const MainHeaderLogo = styled.div`
 export const MainBody = styled.div`
     background-color: white;
     width: 70vw;
-    height: 90vh;
+    height: 90.5vh;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -52,4 +52,12 @@ export const MessageP = styled.p`
 
 export const InputStyle = styled.input`
     width: ${props => props.message ? '30vw' : '10vw'};
+`
+
+export const Footer = styled.footer`
+    background-color: lightgray;
+    width: 100%;
+    font-size: 12px;
+    position: relative;
+    bottom: 7px;
 `
