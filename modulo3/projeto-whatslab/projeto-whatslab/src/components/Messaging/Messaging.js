@@ -16,14 +16,16 @@ export function Messaging (){
     const onSendMessage = (e) =>{
         e.preventDefault()
         let newMsg
-        if (nameInput == 'eu') {
-            newMsg = <All.MessageP isItMe name={nameInput} onClick={DeleteMsg}>{messageInput}</All.MessageP>
-        } else {
-            newMsg = <All.MessageP name={nameInput} onClick={DeleteMsg}><All.SenderName>{nameInput}</All.SenderName>{messageInput}</All.MessageP>
+        if (messageInput !== '') {
+            if (nameInput == 'eu') {
+                newMsg = <All.MessageP isItMe name={nameInput} onClick={DeleteMsg}>{messageInput}</All.MessageP>
+            } else {
+                newMsg = <All.MessageP name={nameInput} onClick={DeleteMsg}><All.SenderName>{nameInput}</All.SenderName>{messageInput}</All.MessageP>
+            }
+            setMsgHistory([newMsg, ...msgHistory])
+            setNameInput('')
+            setMessageInput('')
         }
-        setMsgHistory([newMsg, ...msgHistory])
-        setNameInput('')
-        setMessageInput('')
     }
 
     const DeleteMsg = (e) =>{

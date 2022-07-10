@@ -34,7 +34,7 @@ export const MainBody = styled.div`
     border: 2px solid #9b9590;
     border-radius: 4px;
     width: 70vw;
-    height: 90.5vh;
+    height: 88vh;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -49,16 +49,20 @@ export const MainMessageField = styled.div`
     display: flex;
     flex-direction: column-reverse;
     overflow: auto;
+    margin: 0 30px;
 `
 
 // Parágrafos das mensagens
 export const MessageP = styled.p`
     align-self: ${props => props.isItMe ? 'flex-end' : 'flex-start'};
+    background: ${props => props.isItMe ? '#dcf6c6' : 'white'};
+    border: 1px solid lightgray;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
     text-align: start;
-    margin-left: 30px;
-    text-transform: capitalize;
+    padding: 10px;
 `
 
 export const SenderName = styled.span`
