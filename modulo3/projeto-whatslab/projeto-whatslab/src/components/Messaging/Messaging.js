@@ -17,9 +17,9 @@ export function Messaging (){
         e.preventDefault()
         let newMsg
         if (nameInput == 'eu') {
-            newMsg = <All.MessageP isItMe name={nameInput} onClick={DeleteMsg}>{nameInput}: {messageInput}</All.MessageP>
+            newMsg = <All.MessageP isItMe name={nameInput} onClick={DeleteMsg}>{messageInput}</All.MessageP>
         } else {
-            newMsg = <All.MessageP name={nameInput} onClick={DeleteMsg}>{nameInput}: {messageInput}</All.MessageP>
+            newMsg = <All.MessageP name={nameInput} onClick={DeleteMsg}><All.SenderName>{nameInput}</All.SenderName>{messageInput}</All.MessageP>
         }
         setMsgHistory([newMsg, ...msgHistory])
         setNameInput('')
@@ -27,8 +27,9 @@ export function Messaging (){
     }
 
     const DeleteMsg = (e) =>{
-        // const name = e.target.getAttribute("name")
+        
         // setMsgHistory(msgHistory.filter(item => item.name !== name));
+        
         // switch (e.detail){
         //     case 2:
         //         console.log('double click');
@@ -43,15 +44,13 @@ export function Messaging (){
             <All.MainMessageField>
                 {msgHistory}
             </All.MainMessageField>
-            <div>
-                <form onSubmit={onSendMessage}>
-                    <label htmlFor='name'>Name:</label>
-                    <All.InputStyle name='name' onChange={handleNameInput} value={nameInput}></All.InputStyle>
-                    <label htmlFor='message'>Msg:</label>
-                    <All.InputStyle name='message' onChange={handleMessageInput} value={messageInput} message></All.InputStyle>
-                    <button type='submit'>Enviar Mensagem</button>
-                </form>
-            </div>
+            <All.Messaging onSubmit={onSendMessage}>
+                <label htmlFor='name'>Name:</label>
+                <All.InputStyle name='name' onChange={handleNameInput} value={nameInput}></All.InputStyle>
+                <label htmlFor='message'>Msg:</label>
+                <All.InputStyle name='message' onChange={handleMessageInput} value={messageInput} message></All.InputStyle>
+                <All.SendButton type='submit'>Enviar</All.SendButton>
+            </All.Messaging>
         </>
     )
 }
