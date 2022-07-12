@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './style.css'
+import * as All from './PostStyle'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
@@ -73,16 +73,16 @@ function Post(props){
     }
 
   return(
-    <div className = 'PostContainer'>
-      <div className = 'PostHeader'>
-        <img className = 'UserPhoto' src={props.fotoUsuario} alt={'Imagem do usuario'}/>
+    <All.PostContainer>
+      <All.PostHeader>
+        <All.UserPhoto src={props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{props.nomeUsuario}</p>
         <img src={flagIcon} onClick={onClickFlag}></img>
-      </div>
+      </All.PostHeader>
 
-      <img className = 'PostPhoto'src={props.fotoPost} alt={'Imagem do post'}/>
+      <All.PostPhoto src={props.fotoPost} alt={'Imagem do post'}/>
 
-      <div className = 'PostFooter'>
+      <All.PostFooter>
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={onClickCurtida}
@@ -94,11 +94,10 @@ function Post(props){
           onClickIcone={onClickComentario}
           valorContador={numeroComentarios}
         />
-      </div>
+      </All.PostFooter>
       {componenteComentario}
-    </div>
+    </All.PostContainer>
   )
 }
-
 
 export default Post
