@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "529d3f1c-ab74-4b78-b923-eace37844b82",
+		"name": "Labefy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22376211"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "createPlaylist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "rafael-castro-lamarr",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"playlist4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+							"protocol": "https",
+							"host": [
+								"us-central1-labenu-apis",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"labefy",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTrackToPlaylist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "rafael-castro-lamarr",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"All Along the Watchtower\",\r\n\"artist\": \"Billy Valentine\",\r\n\"url\": \"https://www.youtube.com/watch?v=ghTg7jiXrzo\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks",
+							"protocol": "https",
+							"host": [
+								"us-central1-labenu-apis",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"labefy",
+								"playlists",
+								":playlistId",
+								"tracks"
+							],
+							"variable": [
+								{
+									"key": "playlistId",
+									"value": "080705c4-f737-4e3a-b351-841d654ac3e4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "getAllPlaylists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "rafael-castro-lamarr",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+							"protocol": "https",
+							"host": [
+								"us-central1-labenu-apis",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"labefy",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlaylistTracks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "rafael-castro-lamarr",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks",
+							"protocol": "https",
+							"host": [
+								"us-central1-labenu-apis",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"labefy",
+								"playlists",
+								":playlistId",
+								"tracks"
+							],
+							"variable": [
+								{
+									"key": "playlistId",
+									"value": "5b79f688-cd7c-4d8c-9828-bea78eddd4d9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchPlaylist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "rafael-castro-lamarr",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=\"play*\"",
+							"protocol": "https",
+							"host": [
+								"us-central1-labenu-apis",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"labefy",
+								"playlists",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "\"play*\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DEL",
+			"item": [
+				{
+					"name": "deletePlaylist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "rafael-castro-lamarr",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId",
+							"protocol": "https",
+							"host": [
+								"us-central1-labenu-apis",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"labefy",
+								"playlists",
+								":playlistId"
+							],
+							"variable": [
+								{
+									"key": "playlistId",
+									"value": "2ebec8b5-9918-4856-abce-27aef7bb028c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeTrackFromPlaylist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "rafael-castro-lamarr",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks/:trackId",
+							"protocol": "https",
+							"host": [
+								"us-central1-labenu-apis",
+								"cloudfunctions",
+								"net"
+							],
+							"path": [
+								"labefy",
+								"playlists",
+								":playlistId",
+								"tracks",
+								":trackId"
+							],
+							"variable": [
+								{
+									"key": "playlistId",
+									"value": "080705c4-f737-4e3a-b351-841d654ac3e4"
+								},
+								{
+									"key": "trackId",
+									"value": "c080a4c8-892d-4142-9100-a2108a0a7e4a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
