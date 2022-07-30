@@ -72,8 +72,13 @@ function App() {
         <UserDetails
           urlProp={url}
           headersProp={myHeaders}
+          bodyProp={body}
           userDetailsProp={userDetails}
           pageChangerProp={pageChanger}
+          inputNameProp={inputName}
+          inputEmailProp={inputEmail}
+          setInputNameProp={setInputName}
+          setInputEmailProp={setInputEmail}
         />
       }
     </>
