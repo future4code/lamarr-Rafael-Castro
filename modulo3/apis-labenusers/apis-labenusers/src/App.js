@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css';
 import { LogUpForm } from './Components/LogUpForm';
 import { UsersList } from './Components/UsersList';
+import { UserDetails } from './Components/UserDetails';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [inputName, setInputName] = useState('')
   const [inputEmail, setInputEmail] = useState('')
   const [usersList, setUsersList] = useState([])
+  const [userDetails, setUserDetails] = useState([])
 
   const pageChanger = (data) => {
     setPageChoser(data)
@@ -57,14 +59,23 @@ function App() {
       
       {pageChoser === 'userslist' &&
         <UsersList
-        usersListProps={usersList}
+        usersListProp={usersList}
         urlProp={url}
         headersProp={myHeaders}
         setUsersListProp={setUsersList}
         pageChangerProp={pageChanger}
+        setUserDetailsProp={setUserDetails}
       />
       }
       
+      {pageChoser === 'userdetails' &&
+        <UserDetails
+          urlProp={url}
+          headersProp={myHeaders}
+          userDetailsProp={userDetails}
+          pageChangerProp={pageChanger}
+        />
+      }
     </>
   );
 }

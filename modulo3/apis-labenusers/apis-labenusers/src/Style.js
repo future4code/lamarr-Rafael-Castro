@@ -26,6 +26,16 @@ export const Container = styled.div`
     ul{
         list-style: none;
     }
+
+    ul li{
+        cursor: pointer;
+        text-decoration: underline;
+        color: blue;
+    }
+
+    li{
+        list-style: none;
+    }
 `
 
 export const Span = styled.span`
