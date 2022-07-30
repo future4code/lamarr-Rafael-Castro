@@ -7,7 +7,6 @@ export function UsersList (props) {
 
         const delUser = () =>{
             axios.delete(props.urlProp + "/" + item.id, props.headersProp).then((response) =>{
-                // console.log() parei aqui
                 alert('User vaporized.')
             }).catch((error) =>{
                 alert("User survived.")
@@ -31,6 +30,7 @@ export function UsersList (props) {
             <h3>Usuários cadastrados:</h3>
             <ul>
                 {renderList}
+                <button onClick={() => props.pageChangerProp('logup')}>Back</button>
             </ul>
         </All.Container>
     )

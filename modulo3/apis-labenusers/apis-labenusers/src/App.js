@@ -7,9 +7,14 @@ import { UsersList } from './Components/UsersList';
 
 function App() {
 
+  const [pageChoser, setPageChoser] = useState('logup')
   const [inputName, setInputName] = useState('')
   const [inputEmail, setInputEmail] = useState('')
   const [usersList, setUsersList] = useState([])
+
+  const pageChanger = (data) => {
+    setPageChoser(data)
+  }
 
   const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
   const myHeaders =  {
@@ -26,7 +31,6 @@ function App() {
   const getUsers = () => {
     axios.get(url, myHeaders).then((response) => {
       setUsersList(response.data)
-      console.log(response)
     }).catch((error) =>{
       console.log(error.response)
     })
@@ -34,11 +38,12 @@ function App() {
 
   useEffect(() => {
     getUsers()
-  }, [])
+  }, [usersList])
 
   return (
     <>
-      <LogUpForm 
+      {pageChoser === 'logup' &&
+        <LogUpForm 
         urlProp={url}
         headersProp={myHeaders}
         bodyProp={body}
@@ -46,13 +51,20 @@ function App() {
         inputEmailProp={inputEmail}
         setInputNameProp={setInputName}
         setInputEmailProp={setInputEmail}
+        pageChangerProp={pageChanger}
         />
-      <UsersList
+      }
+      
+      {pageChoser === 'userslist' &&
+        <UsersList
         usersListProps={usersList}
         urlProp={url}
         headersProp={myHeaders}
         setUsersListProp={setUsersList}
+        pageChangerProp={pageChanger}
       />
+      }
+      
     </>
   );
 }

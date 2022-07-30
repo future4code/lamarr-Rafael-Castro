@@ -13,6 +13,8 @@ export function LogUpForm (props){
     const createUser = (e) => {
         e.preventDefault()
         axios.post(props.urlProp, props.bodyProp, props.headersProp).then(() =>{
+            props.setInputNameProp('')
+            props.setInputEmailProp('')
             alert("User added.")
         }).catch((error) =>{
             alert("Something went wrong!")
@@ -27,6 +29,7 @@ export function LogUpForm (props){
             <label htmlFor='email'>Email: </label>
             <input type='email' id="email" value={props.inputEmailProp} onChange={getEmailInput}></input>
             <button onClick={createUser}>Enviar</button>
+            <button onClick={() => props.pageChangerProp('userslist')}>Users List</button>
         </All.Container>
     )
 }
