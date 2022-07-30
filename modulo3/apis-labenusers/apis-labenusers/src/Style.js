@@ -22,4 +22,14 @@ export const Container = styled.div`
     button{
         margin-top: 10px;
     }
+
+    ul{
+        list-style: none;
+    }
+`
+
+export const Span = styled.span`
+    display: flex;
+    align-items: center;
+    gap: 10px;
 `
