@@ -4,8 +4,8 @@ import * as All from '../Style'
 
 export function UsersList (props) {
 
-    const [searchInput, setSearchInput] = useState('rafael')
-    const [displaySearchResults, setDisplaySearchResults] = useState(true)
+    const [searchInput, setSearchInput] = useState('')
+    const [displaySearchResults, setDisplaySearchResults] = useState(false)
     const [searchResults, setSearchResults] = useState([])
 
     const getSearchInput = (e) =>{
@@ -19,24 +19,17 @@ export function UsersList (props) {
             .then((response) =>{
                 for (let i = 0; i < response.data.length; i++) {
                     setSearchResults([response.data[i].name])
-                    console.log(response.data[i].name)
                 }
-                console.log(searchResults)
-                console.log(response.data)
             })
-
-        
-            // props.setUsersListProp([])
-            // for (let i = 0; i < response.data.length; i++) {
-            //     props.setUsersListProp([...props.usersListProp, response.data[i].name])
-            // }
+        setDisplaySearchResults(true)
+        setSearchInput('')
     }
+
 
     const renderSearchResults = searchResults.map(item => {
         return(
             <>
-                <li>{item.name}</li>
-                <li>{item.email}</li>
+                <li>{item}</li>
             </>
         )
     })
@@ -80,6 +73,7 @@ export function UsersList (props) {
             </input>
             <button onClick={searchUser}>Search</button>
 
+            {/* Display registered users */}
             {!displaySearchResults &&
                 <>
                     <h3>Usuários cadastrados:</h3>
@@ -90,9 +84,12 @@ export function UsersList (props) {
                 </>
             }
 
+            {/* Search Results */}
             {displaySearchResults &&
                 <>
+                    <h3>Resultado da busca:</h3>
                     {renderSearchResults}
+                    <button onClick={() => setDisplaySearchResults(!displaySearchResults)}>Back</button>
                 </>
             }
         </All.Container>
