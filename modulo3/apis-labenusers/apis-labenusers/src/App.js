@@ -59,9 +59,9 @@ function App() {
       
       {pageChoser === 'userslist' &&
         <UsersList
-        usersListProp={usersList}
         urlProp={url}
         headersProp={myHeaders}
+        usersListProp={usersList}
         setUsersListProp={setUsersList}
         pageChangerProp={pageChanger}
         setUserDetailsProp={setUserDetails}
