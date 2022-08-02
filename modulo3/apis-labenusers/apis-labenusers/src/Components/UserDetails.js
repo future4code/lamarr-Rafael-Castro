@@ -33,9 +33,14 @@ export function UserDetails (props){
                 "name": props.inputNameProp,
                 "email": props.inputEmailProp
                 }
-            axios.put(props.urlProp + "/" + item.id, body, props.headersProp).then((response) =>{
+            axios.put(props.urlProp + "/" + item.id, body, props.headersProp).then(() =>{
                 alert('User updated.')
                 setEditUserForm(!editUserForm)
+                props.setInputNameProp('')
+                props.setInputEmailProp('')
+                axios.get(props.urlProp + '/' + item.id, props.headersProp).then((response) => {
+                    props.setUserDetailsProp([{id: item.id, name: response.data.name, email: response.data.email}])
+                })
             }).catch((error) =>{
                 alert("No changes made.")
             })

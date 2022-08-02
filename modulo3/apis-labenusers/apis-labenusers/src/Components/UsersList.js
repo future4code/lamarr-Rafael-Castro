@@ -49,8 +49,8 @@ export function UsersList (props) {
         }
 
         const getUserDetail = () => {
-            axios.get(props.urlProp + '/' + item.id, props.headersProp).then((reponse) => {
-                props.setUserDetailsProp([{id: item.id, name: reponse.data.name, email: reponse.data.email}])
+            axios.get(props.urlProp + '/' + item.id, props.headersProp).then((response) => {
+                props.setUserDetailsProp([{id: item.id, name: response.data.name, email: response.data.email}])
                 props.pageChangerProp('userdetails')
             })
         }
