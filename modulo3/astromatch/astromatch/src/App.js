@@ -28,12 +28,18 @@ function App() {
     })
   }
 
+  const getMatches = () => {
+    axios.get(url+'rafael/matches').then((response) => {
+      console.log(response)
+    })
+  }
+
   const renderCard = () => {
     return(
       <All.Card>
         <All.CardHeader>
           <h1>astro<span>match</span></h1>
-          <img src={displayMatches} alt="Mostra matches" />
+          <img src={displayMatches} onClick={getMatches} alt="Mostra matches" />
         </All.CardHeader>
         <div className='HorizontalBar'/>
         <All.ProfilePicContainer>
