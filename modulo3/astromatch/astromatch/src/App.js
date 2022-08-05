@@ -12,18 +12,24 @@ function App() {
   const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/"
 
   const getProfile = () => {
-    axios.get(url+'darvas/person').then((response) =>{
+    axios.get(url+'rafael/person').then((response) =>{
       setProfileToChose(response.data.profile)
-      console.log(response.data.profile)
+      // console.log(response)
     })
   }
-  
-  useEffect(() => {
-    getProfile()
-  }, [])
 
-  return (
-    <All.Main>
+  const choosePerson = () => {
+    const body = {
+      "id": profileToChose.id,
+      "choice": true
+    }
+    axios.post(url+'rafael/choose-person', body).then((response) => {
+      // console.log('ok')
+    })
+  }
+
+  const renderCard = () => {
+    return(
       <All.Card>
         <All.CardHeader>
           <h1>astro<span>match</span></h1>
@@ -32,14 +38,23 @@ function App() {
         <div className='HorizontalBar'/>
         <All.ProfilePicContainer>
           <All.ProfilePic src={profileToChose.photo} alt={profileToChose.photo_alt} />
-          <h3>{profileToChose.name} {profileToChose.age}</h3>
-          <p>{profileToChose.bio}</p>
+          <p><span>{profileToChose.name} {profileToChose.age}</span> <br/> {profileToChose.bio}</p>
         </All.ProfilePicContainer>
         <All.CardFooter>
           <img src={nopeBtn} alt="Botão rejeitar"/>
-          <img src={yeahBtn} alt="Botão gostei" />
+          <img src={yeahBtn} onClick={choosePerson} alt="Botão gostei" />
         </All.CardFooter>
       </All.Card>
+    )
+  }
+
+  useEffect(() => {
+    getProfile()
+  }, [])
+
+  return (
+    <All.Main>
+      {renderCard()}
       <All.GlobalStyle/>
     </All.Main>
     

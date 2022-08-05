@@ -63,18 +63,22 @@ export const ProfilePicContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: end;
+    /* flex-wrap: wrap; */
 
-    p, h3{
+    p{
+        width: 17%;
         position: absolute;
         margin-bottom: 30px;
         color: #fff;
-        width: 75%;
         padding: 0 10px;
     }
 
-    h3 {
-        margin-bottom: 90px;
+    span{
+        font-weight: bold;
+        font-size: 22px;
     }
+
+
 `
 
 export const ProfilePic = styled.img`
