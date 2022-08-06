@@ -13,10 +13,11 @@ function App() {
   const [matches, setMatches] = useState([])
 
   const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/"
+  const aluno = 'rafael'
 
   // getProfile API endpoint
   const getProfile = () => {
-    axios.get(url+'rafael/person').then((response) =>{
+    axios.get(url+aluno+'/person').then((response) =>{
       setProfileToChose(response.data.profile)
       // console.log(response)
     })
@@ -28,21 +29,26 @@ function App() {
       "id": profileToChose.id,
       "choice": choice
     }
-    axios.post(url+'rafael/choose-person', body).then((response) => {
-      // console.log('ok')
-    })
+    axios.post(url+aluno+'/choose-person', body)
+    getProfile()
   }
 
     // getMatches API endpoint
   const getMatches = () => {
-    axios.get(url+'rafael/matches').then((response) => {
+    axios.get(url+aluno+'/matches').then((response) => {
       setMatches(response.data.matches)
       setPageChoser('matches')
-      // console.log(response.data.matches)
-      // console.log(matches)
-      // console.log(matches[0].name)
+
     })
   }
+
+  // clearMatches API endpoint
+  const clearMatches = () => {
+    axios.put(url+aluno+'/clear').then((response) => {
+      alert('Matches resetados.')
+    })
+  }
+
   
   const DisplayPage = () =>{
     switch (pageChoser) {
@@ -50,7 +56,6 @@ function App() {
         return renderCardToChose();
       case 'matches':
         return <ul>{renderMatches}</ul>
-          
       default:
         return renderCardToChose();
     }
@@ -88,15 +93,16 @@ function App() {
     <All.Main>
       <All.Card>
         <All.CardHeader>
+          {pageChoser === 'matches' && <img src={backIcon} onClick={() => setPageChoser('card')} alt="Volta para tela de escolha" />}
           <h1>astro<span>match</span></h1>
-          <img src={displayMatches} onClick={getMatches} alt="Mostra matches" />
-          
+          {pageChoser === 'card' && <img src={displayMatches} onClick={getMatches} alt="Mostra matches" />}
         </All.CardHeader>
 
         <All.CardCore>
           {DisplayPage()}
         </All.CardCore>
       </All.Card>
+        <button onClick={clearMatches}>Resetar matches</button>
       <All.GlobalStyle/>
     </All.Main>
     

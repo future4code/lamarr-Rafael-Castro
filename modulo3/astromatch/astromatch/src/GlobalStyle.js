@@ -12,6 +12,7 @@ export const Main = styled.main`
     background: lightgray;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 `
@@ -28,18 +29,25 @@ export const Card = styled.div`
 `
 
 export const CardHeader = styled.header`
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 0 5px;
     
-    img{
-        position: relative;
+    img:last-child{
         height: 15px;
-        right: -30%;
+        position: absolute;
+        right: 15px;
+    }
+    
+    img:first-child{
+        height: 30px;
+        position: absolute;
     }
 
     h1{
         color: #0a776c;
+        margin: auto;
     }
 
     span{
