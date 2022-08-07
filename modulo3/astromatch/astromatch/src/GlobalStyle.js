@@ -33,11 +33,13 @@ export const CardHeader = styled.header`
     display: flex;
     align-items: center;
     padding: 0 5px;
+    position: relative;
+    border-bottom: 1px solid lightgray;
     
     img:last-child{
         height: 15px;
         position: absolute;
-        right: 15px;
+        right: 7px;
     }
     
     img:first-child{
@@ -56,30 +58,30 @@ export const CardHeader = styled.header`
 `
 
 export const ProfilePicContainer = styled.div`
-    max-height: 80%;
-    max-width: 80%;
+    height: 100%;
+    width: 90%;
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
 
     p{
         width: 17%;
         position: absolute;
         margin-bottom: 30px;
-        color: #fff;
+        color: #000;
         padding: 0 10px;
+        align-self: flex-end;
     }
 
     span{
         font-weight: bold;
         font-size: 22px;
     }
-
-
 `
 
 export const ProfilePic = styled.img`
-    height: 100%;
+    max-height: 80%;
+    max-width: 100%;
     border-radius: 4px;
 `
 
@@ -96,14 +98,17 @@ export const CardFooter = styled.footer`
     }
 `
 
-export const CardCore = styled.div`
-    border-top: 1px solid lightgray;
+export const Matches = styled.div`
     height: 93%;
     width: 100%;
     overflow: auto;
+    padding: 10px;
 
     ul{
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     ul li{

@@ -19,18 +19,18 @@ function App() {
   const getProfile = () => {
     axios.get(url+aluno+'/person').then((response) =>{
       setProfileToChose(response.data.profile)
-      // console.log(response)
     })
   }
 
   // choosePerson API endpoint
-  const choosePerson = (choice) => {
+  const choosePerson = () => {
     const body = {
       "id": profileToChose.id,
-      "choice": choice
+      "choice": true
     }
-    axios.post(url+aluno+'/choose-person', body)
-    getProfile()
+    axios.post(url+aluno+'/choose-person', body).then((response) => {
+      {response.data.isMatch && getProfile()}
+    })
   }
 
     // getMatches API endpoint
@@ -44,18 +44,22 @@ function App() {
 
   // clearMatches API endpoint
   const clearMatches = () => {
-    axios.put(url+aluno+'/clear').then((response) => {
+    axios.put(url+aluno+'/clear').then(() => {
       alert('Matches resetados.')
+      {pageChoser === 'matches' && getMatches()}
     })
   }
-
   
   const DisplayPage = () =>{
     switch (pageChoser) {
       case 'card':
         return renderCardToChose();
       case 'matches':
-        return <ul>{renderMatches}</ul>
+        return (
+          <All.Matches>
+            <ul>{renderMatches}</ul>
+          </All.Matches>
+        )
       default:
         return renderCardToChose();
     }
@@ -69,8 +73,8 @@ function App() {
           <p><span>{profileToChose.name} {profileToChose.age}</span> <br/> {profileToChose.bio}</p>
         </All.ProfilePicContainer>
         <All.CardFooter>
-          <img src={nopeBtn} onClick={() => choosePerson(false)} alt="Botão rejeitar"/>
-          <img src={yeahBtn} onClick={() => choosePerson(true)} alt="Botão gostei" />
+          <img src={nopeBtn} onClick={getProfile} alt="Botão rejeitar"/>
+          <img src={yeahBtn} onClick={choosePerson} alt="Botão gostei" />
         </All.CardFooter>
       </>
     )
@@ -97,10 +101,7 @@ function App() {
           <h1>astro<span>match</span></h1>
           {pageChoser === 'card' && <img src={displayMatches} onClick={getMatches} alt="Mostra matches" />}
         </All.CardHeader>
-
-        <All.CardCore>
-          {DisplayPage()}
-        </All.CardCore>
+        {DisplayPage()}
       </All.Card>
         <button onClick={clearMatches}>Resetar matches</button>
       <All.GlobalStyle/>
@@ -108,5 +109,4 @@ function App() {
     
   );
 }
-
 export default App;
