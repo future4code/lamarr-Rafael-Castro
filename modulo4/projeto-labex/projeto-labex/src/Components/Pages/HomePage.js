@@ -8,13 +8,8 @@ export function HomePage() {
     return (
         <>
             <h1>Homepage</h1>
-            <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Admin Home Page</button>
-            <button onClick={() => {MyRoutes.goToApplicationFormPage(navigate)}}>Application Form</button>
-            <button onClick={() => {MyRoutes.goToCreateTripPage(navigate)}}>Create Trip</button>
-            <button onClick={() => {MyRoutes.goToLoginPage(navigate)}}>Login</button>
-            <button onClick={() => {MyRoutes.goToTripDetailsPage(navigate)}}>Trip Details</button>
-            <button onClick={() => {MyRoutes.goToTripsListpage(navigate)}}>Trips List</button>
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+            <button onClick={() => {MyRoutes.goToLoginPage(navigate)}}>Área Administrativa</button>
+            <button onClick={() => {MyRoutes.goToTripsListpage(navigate)}}>Lista de Viagens</button>
         </>
     );
 }

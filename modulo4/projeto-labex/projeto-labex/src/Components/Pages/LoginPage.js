@@ -9,12 +9,13 @@ export function LoginPage() {
     return (
         <>
             <h1>Login</h1>
-            <button onClick={() => {MyRoutes.goToHomePage(navigate)}}>Home Page</button>
-            <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Admin Home Page</button>
-            <button onClick={() => {MyRoutes.goToApplicationFormPage(navigate)}}>Application Form Page</button>
-            <button onClick={() => {MyRoutes.goToCreateTripPage(navigate)}}>Create Trip Page</button>
-            <button onClick={() => {MyRoutes.goToTripDetailsPage(navigate)}}>Trip Details</button>
-            <button onClick={() => {MyRoutes.goToTripsListpage(navigate)}}>Trips List</button>
+            <form action="">
+                {/* <label htmlFor="email">Email:</label> */}
+                <input type="email" name="email" id="" placeholder="Email"/>
+                {/* <label htmlFor="password">Email:</label> */}
+                <input type="password" name="password" id="" placeholder="Senha"/>
+                <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Acessar</button>
+            </form>
             <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
         </>
     );

@@ -1,21 +1,33 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as MyRoutes from '../Coordinator'
+import useRequestData from "../Hooks/useRequestData"
+import {rootUrl} from '../Constants'
 
 export function AdminHomePage() {
     
     const navigate = useNavigate();
     
+    let [dataTrips, isLoadingTrips, errorTrips] = useRequestData(`${rootUrl}Rafael/trips`)
+
+    const renderTrips = dataTrips && dataTrips.map((item) => {
+        return <li>{item.name} X</li>
+    })
+    
     return (
         <>
-            <h1>Admin Homepage</h1>
-            <button onClick={() => {MyRoutes.goToHomePage(navigate)}}>Home Page</button>
-            <button onClick={() => {MyRoutes.goToApplicationFormPage(navigate)}}>Application Form</button>
-            <button onClick={() => {MyRoutes.goToCreateTripPage(navigate)}}>Create Trip</button>
-            <button onClick={() => {MyRoutes.goToLoginPage(navigate)}}>Login</button>
-            <button onClick={() => {MyRoutes.goToTripDetailsPage(navigate)}}>Trip Details</button>
-            <button onClick={() => {MyRoutes.goToTripsListpage(navigate)}}>Trips List</button>
+            <h1>Área Administrativa</h1>
+            {isLoadingTrips&&'Carregando...'}
+            {!isLoadingTrips&&dataTrips&&
+                <>
+                    <ul>
+                        {renderTrips}
+                    </ul>
+                </>
+            }
+            {!isLoadingTrips&&!dataTrips&&errorTrips}
             <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+            <button onClick={() => {MyRoutes.goToCreateTripPage(navigate)}}>Criar nova viagem</button>
         </>
     );
 }

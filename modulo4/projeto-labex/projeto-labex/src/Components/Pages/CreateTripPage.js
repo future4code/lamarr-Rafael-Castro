@@ -8,13 +8,20 @@ export function CreateTripPage() {
 
     return (
         <>
-            <h1>Create Trip Page</h1>
-            <button onClick={() => {MyRoutes.goToHomePage(navigate)}}>Home Page</button>
-            <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Admin Home Page</button>
-            <button onClick={() => {MyRoutes.goToApplicationFormPage(navigate)}}>Application Form Page</button>
-            <button onClick={() => {MyRoutes.goToLoginPage(navigate)}}>Login</button>
-            <button onClick={() => {MyRoutes.goToTripDetailsPage(navigate)}}>Trip Details</button>
-            <button onClick={() => {MyRoutes.goToTripsListpage(navigate)}}>Trips List</button>
+            <h1>Criar nova viagem</h1>
+            <form action="">
+                {/* <label htmlFor="tripName">Nome da viagem:</label> */}
+                <input type="text" name="tripName" id="" placeholder="Nome da viagem"/>
+                {/* <label htmlFor="planet">Planeta:</label> */}
+                <input type="text" name="planet" id="" placeholder="Planeta"/>
+                {/* <label htmlFor="date">Data:</label> */}
+                <input type="date" name="date" id=""/>
+                {/* <label htmlFor="discription">Descrição:</label> */}
+                <input type="text" name="discription" id="" placeholder="Descrição"/>
+                {/* <label htmlFor="duration">Duração:</label> */}
+                <input type="number" name="duration" id="" placeholder="Duração em dias"/>
+                <button>Criar</button>
+            </form>
             <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
         </>
     );

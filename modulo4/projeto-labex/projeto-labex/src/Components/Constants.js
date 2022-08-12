@@ -1,0 +1,1 @@
+export const rootUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/'
