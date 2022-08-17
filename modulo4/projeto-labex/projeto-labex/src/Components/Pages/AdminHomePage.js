@@ -2,13 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as MyRoutes from '../Coordinator'
 import useRequestData from "../Hooks/useRequestData"
-import {rootUrl} from '../Constants'
+import {rootUrl, aluno} from '../Constants'
 
 export function AdminHomePage() {
     
     const navigate = useNavigate();
     
-    let [dataTrips, isLoadingTrips, errorTrips] = useRequestData(`${rootUrl}Rafael/trips`)
+    let [dataTrips, isLoadingTrips, errorTrips] = useRequestData(`${rootUrl}${aluno}/trips`)
 
     const renderTrips = dataTrips && dataTrips.map((item) => {
         return <li>{item.name} X</li>

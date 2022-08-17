@@ -11,9 +11,9 @@ export function LoginPage() {
             <h1>Login</h1>
             <form action="">
                 {/* <label htmlFor="email">Email:</label> */}
-                <input type="email" name="email" id="" placeholder="Email"/>
+                <input type="email" name="email" id="" placeholder="Email" required/>
                 {/* <label htmlFor="password">Email:</label> */}
-                <input type="password" name="password" id="" placeholder="Senha"/>
+                <input type="password" name="password" id="" placeholder="Senha" required/>
                 <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Acessar</button>
             </form>
             <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
