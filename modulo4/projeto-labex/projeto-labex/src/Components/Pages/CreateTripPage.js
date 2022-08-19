@@ -2,8 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as MyRoutes from '../Coordinator'
 import { planets } from "../Constants";
+import useAuthenticated from "../Hooks/useAuthenticated"
 
 export function CreateTripPage() {
+    useAuthenticated()
 
     const navigate = useNavigate();
 
@@ -31,7 +33,10 @@ export function CreateTripPage() {
                     {planetsOptions}
                 </select>
                 {/* <label htmlFor="date">Data:</label> */}
-                <input type="date" min={dateToday} name="date" />
+                <input 
+                    type="date" 
+                    min={dateToday} 
+                    name="date" />
                 {/* <label htmlFor="discription">Descrição:</label> */}
                 <input
                     type="text" 

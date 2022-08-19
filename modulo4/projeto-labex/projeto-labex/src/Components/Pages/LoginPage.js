@@ -1,20 +1,59 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as MyRoutes from '../Coordinator'
+import { useForm } from "../Hooks/useForm";
+import axios from "axios"
+import { rootUrl } from "../Constants";
+import { aluno } from "../Constants";
 
 export function LoginPage() {
 
     const navigate = useNavigate();
 
+    // UseForm
+    const [form, inputHandler, clear] = useForm({email: "", password: ""})
+
+    /* Collects form inputs data, get token from Login endpoint, 
+    saves it to localStorage */
+    const Login = (e) => {
+        e.preventDefault()
+        axios.post(`${rootUrl}${aluno}/login`, form)
+            .then((response) => {
+                localStorage.setItem("token", response.data.token)
+                navigate("/admin/trips/list")
+            })
+            .catch((error) => {
+                alert(error.response.data.message)
+                navigate("/")
+            })
+            
+        clear()
+    }
+
     return (
         <>
             <h1>Login</h1>
-            <form action="">
+            <form onSubmit={Login}>
                 {/* <label htmlFor="email">Email:</label> */}
-                <input type="email" name="email" id="" placeholder="Email" required/>
+                <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Email" 
+                    value={form.email}
+                    onChange={inputHandler}
+                    required
+                />
                 {/* <label htmlFor="password">Email:</label> */}
-                <input type="password" name="password" id="" placeholder="Senha" required/>
-                <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Acessar</button>
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Senha" 
+                    value={form.password}
+                    onChange={inputHandler}
+                    required
+                />
+                <button type="submit">Acessar</button>
+                {/* <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Acessar</button> */}
             </form>
             <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
         </>

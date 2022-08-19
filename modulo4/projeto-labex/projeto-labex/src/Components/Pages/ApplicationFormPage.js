@@ -42,7 +42,12 @@ export function ApplicationFormPage() {
                                 placeholder="Nome"
                             />
                             {/* <label htmlFor="age">Idade:</label> */}
-                            <input type="number" name="name" min={18} title="Idade mínima 18 anos" placeholder="Idade"/>
+                            <input 
+                                type="number" 
+                                name="name" 
+                                min={18} 
+                                title="Idade mínima 18 anos" 
+                                placeholder="Idade"/>
                             {/* <label htmlFor="text">Texto de Candidatura:</label> */}
                             <input
                                 type="text"

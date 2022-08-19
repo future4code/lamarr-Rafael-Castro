@@ -9,8 +9,8 @@ export function TripsListPage() {
     const navigate = useNavigate();
     let [dataTrips, isLoadingTrips, errorTrips] = useRequestData(`${rootUrl}${aluno}/trips`)
 
-    const renderTrips = dataTrips && dataTrips.map((item) => {
-        return <li>{item.name}</li>
+    const renderTrips = dataTrips && dataTrips.map((item, index) => {
+        return <li key={index}>{item.name}</li>
     })
 
     return (
