@@ -22,13 +22,13 @@ export function CreateTripPage() {
                 {/* <label htmlFor="tripName">Nome da viagem:</label> */}
                 <input
                     type="text"
-                    name="tripName"
+                    name="name"
                     placeholder="Nome da viagem" 
                     pattern="[a-zA-Z]{5,}"
                     title="Mínimo de 5 letras" 
-                    
+                    required
                 />
-                <select name="planets" >
+                <select name="planet" required>
                     <option disabled selected value="">Escolha um planeta</option>
                     {planetsOptions}
                 </select>
@@ -36,7 +36,9 @@ export function CreateTripPage() {
                 <input 
                     type="date" 
                     min={dateToday} 
-                    name="date" />
+                    name="date"
+                    required
+                />
                 {/* <label htmlFor="discription">Descrição:</label> */}
                 <input
                     type="text" 
@@ -44,20 +46,20 @@ export function CreateTripPage() {
                     pattern="[a-zA-Z]{30,}" 
                     title="Mínimo de 30 caractéres" 
                     placeholder="Descrição"
-                    
+                    required
                 />
                 {/* <label htmlFor="duration">Duração:</label> */}
                 <input 
                     type="number" 
-                    name="duration" 
+                    name="durationInDays" 
                     min={50} 
                     title="Mínimo de 50 dias" 
                     placeholder="Duração em dias"
-                    
+                    required
                 />
                 <button>Criar</button>
             </form>
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
         </>
     );
 }
