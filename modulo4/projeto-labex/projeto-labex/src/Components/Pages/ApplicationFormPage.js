@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useRequestData from "../Hooks/useRequestData"
 import {countries, rootUrl, aluno} from '../Constants'
@@ -22,7 +23,7 @@ export function ApplicationFormPage() {
 
     const applyToTrip = (id) => {
         axios.post(`${rootUrl}${aluno}/trips/${id}/apply`)
-        .then()
+        // .then(())
     }
 
     const tripsAvailable = dataTrips && dataTrips.map((item) => {
@@ -47,6 +48,7 @@ export function ApplicationFormPage() {
                                 pattern="[a-zA-Z]{3,}"
                                 title="Mínimo de 3 caractéres" 
                                 placeholder="Nome"
+                                value={form.name}
                                 onChange={inputHandler}
                                 required
                             />
@@ -57,6 +59,8 @@ export function ApplicationFormPage() {
                                 min={18} 
                                 title="Idade mínima 18 anos" 
                                 placeholder="Idade"
+                                value={form.age}
+                                onChange={inputHandler}
                                 required
                             />
                             {/* <label htmlFor="text">Texto de Candidatura:</label> */}
@@ -66,6 +70,8 @@ export function ApplicationFormPage() {
                                 pattern="[a-zA-Z]{30,}" 
                                 title="Mínimo de 30 caractéres" 
                                 placeholder="Texto de Candidatura"
+                                value={form.applicationText}
+                                onChange={inputHandler}
                                 required
                             />
                             {/* <label htmlFor="profession">Profissão:</label> */}
@@ -75,6 +81,8 @@ export function ApplicationFormPage() {
                                 pattern="[a-zA-Z]{10,}" 
                                 title="Mínimo de 10 caractéres"
                                 placeholder="Profissão"
+                                value={form.profession}
+                                onChange={inputHandler}
                                 required
                             />
                             <select name="country" required>

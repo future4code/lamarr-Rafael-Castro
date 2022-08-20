@@ -1,23 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { aluno, rootUrl } from "../Constants"
-import * as MyRoutes from '../Coordinator'
+import { goToBack } from '../Coordinator'
 import useAuthenticated from "../Hooks/useAuthenticated"
 
 export function TripDetailsPage() {
     useAuthenticated()
-
     const navigate = useNavigate();
+    const pathParams = useParams()
 
-    // const tripDetails = axios.get(`${rootUrl}${aluno}/trip/`)
+    let [tripDetails, setTripDetails] = useState([])
+
+    useEffect(() => {
+        axios.get(`${rootUrl}${aluno}/trip/${pathParams.id}`,
+        {
+            headers: {
+                auth: localStorage.getItem("token")
+            }
+        }).then(response => {
+            setTripDetails([response.data.trip])
+            })
+    }, [])
+
+    let tripDetailsRender = tripDetails.map(item => {
+        return (
+            <>
+                <li>Nome da Viagem: {item.name}</li>
+                <li>Data da viagem: {item.date}</li>
+                <li>Descrição da viagem: {item.description}</li>
+                <li>Destino: {item.planet}</li>
+                <li>Duração: {item.durationInDays} dias</li>
+            </>
+        )
+    })
 
     return (
         <>
             <h1>Trip Details Page</h1>
-            
-
-
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+            <ul>
+                {tripDetailsRender}
+            </ul>
+            <button onClick={() => {goToBack(navigate)}}>Voltar</button>
         </>
     );
 }
