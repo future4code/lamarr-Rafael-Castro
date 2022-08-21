@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import * as MyRoutes from '../Coordinator';
+import { goToBack, goToApplicationFormPage } from '../Coordinator';
 import useRequestData from "../Hooks/useRequestData"
-import {rootUrl, aluno} from '../Constants'
+import { rootUrl, aluno } from '../Constants'
 
 export function TripsListPage() {
 
@@ -25,8 +25,8 @@ export function TripsListPage() {
                 </>
             }
             {!isLoadingTrips&&!dataTrips&&errorTrips}
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
-            <button onClick={() => {MyRoutes.goToApplicationFormPage(navigate)}}>Aplicar para uma viagem</button>
+            <button onClick={() => {goToBack(navigate)}}>Voltar</button>
+            <button onClick={() => {goToApplicationFormPage(navigate)}}>Aplicar para uma viagem</button>
         </>
     );
 }

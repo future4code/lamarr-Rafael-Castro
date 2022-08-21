@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useRequestData from "../Hooks/useRequestData"
 import {countries, rootUrl, aluno} from '../Constants'
-import * as MyRoutes from '../Coordinator'
+import { goToBack } from '../Coordinator'
 import { useForm } from "../Hooks/useForm";
 
 export function ApplicationFormPage() {
@@ -103,7 +103,7 @@ export function ApplicationFormPage() {
                             </select>
                             <button>Enviar</button>
                         </form>
-                        <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
+                        <button onClick={() => {goToBack(navigate)}}>Voltar</button>
                     </>
                 }
                 {!isLoadingTrips&&!dataTrips&&errorTrips}

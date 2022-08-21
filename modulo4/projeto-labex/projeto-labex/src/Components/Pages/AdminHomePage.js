@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import * as MyRoutes from '../Coordinator'
+import { goToBack, goToCreateTripPage } from '../Coordinator'
 import useRequestData from "../Hooks/useRequestData"
 import {rootUrl, aluno} from '../Constants'
 import useAuthenticated from "../Hooks/useAuthenticated"
@@ -33,8 +33,8 @@ export function AdminHomePage() {
                 </>
             }
             {!isLoadingTrips&&!dataTrips&&errorTrips}
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
-            <button onClick={() => {MyRoutes.goToCreateTripPage(navigate)}}>Criar nova viagem</button>
+            <button onClick={() => {goToBack(navigate)}}>Voltar</button>
+            <button onClick={() => {goToCreateTripPage(navigate)}}>Criar nova viagem</button>
         </>
     );
 }

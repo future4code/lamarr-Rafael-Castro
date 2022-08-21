@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import * as MyRoutes from '../Coordinator'
+import { goToBack } from '../Coordinator'
 import { aluno, planets, rootUrl } from "../Constants";
 import useAuthenticated from "../Hooks/useAuthenticated"
 import { useForm } from "../Hooks/useForm";
@@ -93,7 +93,7 @@ export function CreateTripPage() {
                 />
                 <button>Criar</button>
             </form>
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
+            <button onClick={() => {goToBack(navigate)}}>Voltar</button>
         </>
     );
 }

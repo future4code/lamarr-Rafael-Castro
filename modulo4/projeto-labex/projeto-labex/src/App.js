@@ -1,7 +1,5 @@
 import {RoutesComponent} from './Components/Routes'
 
-
-
 function App() {
   return (
     <>

@@ -1,10 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import * as MyRoutes from '../Coordinator'
-import { useForm } from "../Hooks/useForm";
 import axios from "axios"
-import { rootUrl } from "../Constants";
-import { aluno } from "../Constants";
+import { useNavigate } from "react-router-dom";
+import { goToBack } from '../Coordinator'
+import { useForm } from "../Hooks/useForm";
+import { rootUrl, aluno } from "../Constants";
+
 
 export function LoginPage() {
 
@@ -54,7 +54,7 @@ export function LoginPage() {
                 />
                 <button type="submit">Acessar</button>
             </form>
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
+            <button onClick={() => {goToBack(navigate)}}>Voltar</button>
         </>
     );
 }

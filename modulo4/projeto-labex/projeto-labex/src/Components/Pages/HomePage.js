@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import * as MyRoutes from '../Coordinator'
+import { goToLoginPage, goToTripsListpage } from '../Coordinator'
 
 export function HomePage() {
     const navigate = useNavigate();
@@ -8,8 +8,8 @@ export function HomePage() {
     return (
         <>
             <h1>Homepage</h1>
-            <button onClick={() => {MyRoutes.goToLoginPage(navigate)}}>Área Administrativa</button>
-            <button onClick={() => {MyRoutes.goToTripsListpage(navigate)}}>Lista de Viagens</button>
+            <button onClick={() => {goToLoginPage(navigate)}}>Área Administrativa</button>
+            <button onClick={() => {goToTripsListpage(navigate)}}>Lista de Viagens</button>
         </>
     );
 }
