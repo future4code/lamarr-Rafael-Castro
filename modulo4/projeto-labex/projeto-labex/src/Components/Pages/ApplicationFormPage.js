@@ -23,7 +23,9 @@ export function ApplicationFormPage() {
 
     const applyToTrip = (id) => {
         axios.post(`${rootUrl}${aluno}/trips/${id}/apply`)
-        // .then(())
+        .then(response => {
+            console.log(response)
+        })
     }
 
     const tripsAvailable = dataTrips && dataTrips.map((item) => {
@@ -31,7 +33,7 @@ export function ApplicationFormPage() {
     })
 
     const countrieslist = countries.map(item => {
-        return <option>{item}</option>
+        return <option value={item}>{item}</option>
     })
 
     return (
@@ -40,7 +42,7 @@ export function ApplicationFormPage() {
                 {isLoadingTrips&&'Carregando...'}
                 {!isLoadingTrips&&dataTrips&&
                     <>
-                        <form action="">
+                        <form onSubmit={() => applyToTrip(form.tripId)}>
                             {/* <label htmlFor="name">Nome:</label> */}
                             <input 
                                 type="text" 
@@ -67,7 +69,8 @@ export function ApplicationFormPage() {
                             <input
                                 type="text"
                                 name="applicationText" 
-                                pattern="[a-zA-Z]{30,}" 
+                                // pattern="[a-zA-Z]{30,}" 
+                                pattern="[a-zA-Z]" 
                                 title="Mínimo de 30 caractéres" 
                                 placeholder="Texto de Candidatura"
                                 value={form.applicationText}
@@ -78,18 +81,18 @@ export function ApplicationFormPage() {
                             <input 
                                 type="text" 
                                 name="profession" 
-                                pattern="[a-zA-Z]{10,}" 
-                                title="Mínimo de 10 caractéres"
+                                pattern="[a-zA-Z]" 
+                                // title="Mínimo de 10 caractéres"
                                 placeholder="Profissão"
                                 value={form.profession}
                                 onChange={inputHandler}
                                 required
                             />
-                            <select name="country" required>
-                                <option disabled selected value="">País</option>
+                            <select name="country" onChange={inputHandler} required>
+                                <option disabled selected>País</option>
                                 {countrieslist}
                             </select>
-                            <select name="tripId" required>
+                            <select name="tripId" onChange={inputHandler} required>
                                 <option disabled selected>Escolhe a viagem</option>
                                 {tripsAvailable}
                             </select>

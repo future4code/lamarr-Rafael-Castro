@@ -8,7 +8,7 @@ import useAuthenticated from "../Hooks/useAuthenticated"
 
 export function TripDetailsPage() {
     useAuthenticated()
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const pathParams = useParams()
 
     let [tripDetails, setTripDetails] = useState([])
@@ -21,6 +21,7 @@ export function TripDetailsPage() {
             }
         }).then(response => {
             setTripDetails([response.data.trip])
+            console.log(response.data.trip)
             })
     }, [])
 
@@ -32,6 +33,8 @@ export function TripDetailsPage() {
                 <li>Descrição da viagem: {item.description}</li>
                 <li>Destino: {item.planet}</li>
                 <li>Duração: {item.durationInDays} dias</li>
+                <p>Candidatos inscritos:</p>
+                {item.candidates.map(item => <li>{item.name}</li>)}
             </>
         )
     })
