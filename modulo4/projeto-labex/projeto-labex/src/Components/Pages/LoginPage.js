@@ -53,9 +53,8 @@ export function LoginPage() {
                     required
                 />
                 <button type="submit">Acessar</button>
-                {/* <button onClick={() => {MyRoutes.goToAdminHomePage(navigate)}}>Acessar</button> */}
             </form>
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
         </>
     );
 }

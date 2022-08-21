@@ -25,7 +25,7 @@ export function TripsListPage() {
                 </>
             }
             {!isLoadingTrips&&!dataTrips&&errorTrips}
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
             <button onClick={() => {MyRoutes.goToApplicationFormPage(navigate)}}>Aplicar para uma viagem</button>
         </>
     );

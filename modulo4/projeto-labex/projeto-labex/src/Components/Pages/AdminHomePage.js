@@ -33,7 +33,7 @@ export function AdminHomePage() {
                 </>
             }
             {!isLoadingTrips&&!dataTrips&&errorTrips}
-            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+            <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
             <button onClick={() => {MyRoutes.goToCreateTripPage(navigate)}}>Criar nova viagem</button>
         </>
     );

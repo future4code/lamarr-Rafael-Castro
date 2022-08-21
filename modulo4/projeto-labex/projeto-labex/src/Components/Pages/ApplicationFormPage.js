@@ -32,6 +32,7 @@ export function ApplicationFormPage() {
         }).catch(error => {
             console.log(error)
         })
+        clear()
     }
 
     const tripsAvailable = dataTrips && dataTrips.map((item,index) => {
@@ -71,13 +72,12 @@ export function ApplicationFormPage() {
                                 onChange={inputHandler}
                                 required
                             />
-                            {/* <label htmlFor="text">Texto de Candidatura:</label> */}
+                            {/* <label htmlFor="applicationText">Texto de Candidatura:</label> */}
                             <input
                                 type="text"
                                 name="applicationText" 
-                                // pattern="[a-zA-Z]{30,}" 
-                                // pattern="[a-zA-Z]" 
-                                // title="Mínimo de 30 caractéres" 
+                                pattern="[a-zA-Z]{30,}" 
+                                title="Mínimo de 30 caractéres" 
                                 placeholder="Texto de Candidatura"
                                 value={form.applicationText}
                                 onChange={inputHandler}
@@ -87,8 +87,8 @@ export function ApplicationFormPage() {
                             <input 
                                 type="text" 
                                 name="profession" 
-                                // pattern="[a-zA-Z]" 
-                                // title="Mínimo de 10 caractéres"
+                                pattern="[a-zA-Z]{10,}" 
+                                title="Mínimo de 10 caractéres"
                                 placeholder="Profissão"
                                 value={form.profession}
                                 onChange={inputHandler}
@@ -99,7 +99,7 @@ export function ApplicationFormPage() {
                                 {countrieslist}
                             </select>
                             <select name="tripId" onChange={inputHandler} required>
-                                <option disabled selected>Escolhe a viagem</option>
+                                <option disabled selected>Escolha a viagem</option>
                                 {tripsAvailable}
                             </select>
                             <button>Enviar</button>
