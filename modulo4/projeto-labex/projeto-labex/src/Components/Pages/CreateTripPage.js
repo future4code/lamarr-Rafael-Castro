@@ -24,7 +24,6 @@ export function CreateTripPage() {
                 'Content-Type': 'application/json',
                 'auth': localStorage.getItem("token")
             }
-            
         }
 
         axios.post(`${rootUrl}${aluno}/trips`, form, myHeader)
