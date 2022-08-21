@@ -21,21 +21,20 @@ export function TripDetailsPage() {
             }
         }).then(response => {
             setTripDetails([response.data.trip])
-            console.log(response.data.trip)
             })
     }, [])
 
-    let tripDetailsRender = tripDetails.map(item => {
+    let tripDetailsRender = tripDetails.map((item, index) => {
         return (
-            <>
+            <div key={index}>
                 <li>Nome da Viagem: {item.name}</li>
                 <li>Data da viagem: {item.date}</li>
                 <li>Descrição da viagem: {item.description}</li>
                 <li>Destino: {item.planet}</li>
                 <li>Duração: {item.durationInDays} dias</li>
                 <p>Candidatos inscritos:</p>
-                {item.candidates.map(item => <li>{item.name}</li>)}
-            </>
+                {item.candidates.map((item, index) => <li key={index}>{item.name}</li>)}
+            </div>
         )
     })
 

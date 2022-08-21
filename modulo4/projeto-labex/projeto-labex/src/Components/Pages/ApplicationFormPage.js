@@ -21,19 +21,25 @@ export function ApplicationFormPage() {
                                                 country:"",
                                                 tripId:""})
 
-    const applyToTrip = (id) => {
-        axios.post(`${rootUrl}${aluno}/trips/${id}/apply`)
+    const applyToTrip = (e) => {
+        e.preventDefault()
+
+        const myHeader = {'Content-Type': 'application/json'}
+
+        axios.post(`${rootUrl}${aluno}/trips/${form.tripId}/apply`, form, myHeader)
         .then(response => {
-            console.log(response)
+            alert('Aplicação realizada com sucesso.')
+        }).catch(error => {
+            console.log(error)
         })
     }
 
-    const tripsAvailable = dataTrips && dataTrips.map((item) => {
-        return <option value={item.id}>{item.name} - {item.planet}</option>
+    const tripsAvailable = dataTrips && dataTrips.map((item,index) => {
+        return <option key={index} value={item.id}>{item.name} - {item.planet}</option>
     })
 
-    const countrieslist = countries.map(item => {
-        return <option value={item}>{item}</option>
+    const countrieslist = countries.map((item,index) => {
+        return <option key={index} value={item}>{item}</option>
     })
 
     return (
@@ -42,7 +48,7 @@ export function ApplicationFormPage() {
                 {isLoadingTrips&&'Carregando...'}
                 {!isLoadingTrips&&dataTrips&&
                     <>
-                        <form onSubmit={() => applyToTrip(form.tripId)}>
+                        <form onSubmit={applyToTrip}>
                             {/* <label htmlFor="name">Nome:</label> */}
                             <input 
                                 type="text" 
@@ -70,8 +76,8 @@ export function ApplicationFormPage() {
                                 type="text"
                                 name="applicationText" 
                                 // pattern="[a-zA-Z]{30,}" 
-                                pattern="[a-zA-Z]" 
-                                title="Mínimo de 30 caractéres" 
+                                // pattern="[a-zA-Z]" 
+                                // title="Mínimo de 30 caractéres" 
                                 placeholder="Texto de Candidatura"
                                 value={form.applicationText}
                                 onChange={inputHandler}
@@ -81,7 +87,7 @@ export function ApplicationFormPage() {
                             <input 
                                 type="text" 
                                 name="profession" 
-                                pattern="[a-zA-Z]" 
+                                // pattern="[a-zA-Z]" 
                                 // title="Mínimo de 10 caractéres"
                                 placeholder="Profissão"
                                 value={form.profession}
@@ -98,7 +104,7 @@ export function ApplicationFormPage() {
                             </select>
                             <button>Enviar</button>
                         </form>
-                        <button onClick={() => {MyRoutes.goToBack(navigate)}}>Back</button>
+                        <button onClick={() => {MyRoutes.goToBack(navigate)}}>Voltar</button>
                     </>
                 }
                 {!isLoadingTrips&&!dataTrips&&errorTrips}
