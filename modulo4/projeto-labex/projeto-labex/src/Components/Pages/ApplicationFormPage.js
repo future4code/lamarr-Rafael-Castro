@@ -7,7 +7,6 @@ import * as MyRoutes from '../Coordinator'
 import { useForm } from "../Hooks/useForm";
 
 export function ApplicationFormPage() {
-
     const navigate = useNavigate();
 
     // Load all trips names so they can be used on select element
