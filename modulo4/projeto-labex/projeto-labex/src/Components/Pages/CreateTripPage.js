@@ -50,13 +50,13 @@ export function CreateTripPage() {
                     type="text"
                     name="name"
                     placeholder="Nome da viagem" 
-                    pattern="[a-zA-Z]{5,}"
+                    pattern="[a-zA-Z\s]{5,}"
                     title="Mínimo de 5 letras"
                     value={form.name}
                     onChange={inputHandler}
                     required
                 />
-                <select name="planet" onChange={inputHandler} required>
+                <select name="planet" value={form.planet} onChange={inputHandler} required>
                     <option disabled selected value="">Escolha um planeta</option>
                     {planetsOptions}
                 </select>
@@ -73,7 +73,7 @@ export function CreateTripPage() {
                 <input
                     type="text" 
                     name="description" 
-                    pattern="[a-zA-Z]{30,}" 
+                    pattern="[a-zA-Z\s]{30,}" 
                     title="Mínimo de 30 caractéres" 
                     placeholder="Descrição"
                     value={form.description}

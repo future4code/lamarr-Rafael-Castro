@@ -93,12 +93,12 @@ export function ApplicationFormPage() {
                                 onChange={inputHandler}
                                 required
                             />
-                            <select name="country" onChange={inputHandler} required>
-                                <option disabled selected>País</option>
+                            <select name="country" value={form.country} onChange={inputHandler} required>
+                                <option value="" disabled selected>País</option>
                                 {countrieslist}
                             </select>
-                            <select name="tripId" onChange={inputHandler} required>
-                                <option disabled selected>Escolha a viagem</option>
+                            <select name="tripId" value={form.tripId} onChange={inputHandler} required>
+                                <option value="" disabled selected>Escolha a viagem</option>
                                 {tripsAvailable}
                             </select>
                             <button>Enviar</button>
