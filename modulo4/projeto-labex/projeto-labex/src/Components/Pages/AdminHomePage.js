@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { goToBack, goToCreateTripPage } from '../Coordinator'
 import useRequestData from "../Hooks/useRequestData"
@@ -18,7 +19,27 @@ export function AdminHomePage() {
     }
 
     const renderTrips = dataTrips && dataTrips.map((item, index) => {
-        return <li key={index}>{item.name} <button onClick={() => {tripDetails(item.id)}}>Detalhes</button> <button>Remover</button></li>
+
+        const delTrip = (id) => {
+            const myHeader = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'auth': localStorage.getItem("token")
+                }
+            }
+            
+            axios.delete(`${rootUrl}${aluno}/trips/${id}`, myHeader)
+            .then(response => {
+                alert("Viagem excluída.")
+            }).catch(error => {
+                alert('Deu ruim.')
+            })
+        }
+
+        return <li key={index}>{item.name}
+                    <button onClick={() => {tripDetails(item.id)}}>Detalhes</button>
+                    <button onClick={() => {delTrip(item.id)}}>Remover</button>
+                </li>
     })
     
     return (
