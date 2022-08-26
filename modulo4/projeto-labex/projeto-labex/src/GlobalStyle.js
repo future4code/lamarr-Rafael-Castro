@@ -5,6 +5,9 @@ import main_hud from './images/hp_hud.jpg'
 
 export const GlobalStyle = createGlobalStyle`
     :root{
+        --title-font: 'Rammetto One', cursive;
+        --text-font: 'Josefin Sans', sans-serif;
+        height: 100vh;
         background: #000;
         color: #fff;
         background-image: url(${bg_img});
@@ -14,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 
+// HOME PAGE
 export const HomePageMain = styled.div`
     height: 400px;
     width: 45%;
@@ -31,7 +35,7 @@ export const HomePageMain = styled.div`
     margin-top: 200px;
 
     h1{
-        font-family: 'Rammetto One', cursive;
+        font-family: var(--title-font);
         font-size: 60px;
         margin: 0;
         text-shadow: 0 5px 2px rgb(149, 222, 251);
@@ -42,7 +46,7 @@ export const HomePageMain = styled.div`
     }
 
     a{
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: var(--text-font);
         color: rgb(149, 222, 251);
         text-decoration: none;
         font-size: 28px;
@@ -50,6 +54,29 @@ export const HomePageMain = styled.div`
     }
 `
 
-export const test1 = styled.html`
-    background: black;
+// TRIPS LIST PAGE
+export const TripsListContainer = styled.div`
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    /* border: 1px dotted white; */
+
+    h1{
+        font-family: var(--title-font);
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        font-family: var(--text-font);
+        font-size: 22px;
+
+        li{
+            padding: 5px 0;
+        }
+    }
 `
