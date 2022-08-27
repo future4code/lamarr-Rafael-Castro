@@ -80,3 +80,52 @@ export const TripsListContainer = styled.div`
         }
     }
 `
+
+// APPLICATION FORM PAGE
+export const ApplicationFormContainer = styled.div`
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    margin-top: 120px;
+
+    h1{
+        font-family: var(--title-font);
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    select{
+        height: 1.55em;
+    }
+`
+export const ColumnsContainer = styled.div`
+    display: flex;
+    gap: 20px;
+
+    label{
+        visibility: hidden;
+    }
+`
+
+export const ColumnLeft = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+`
+
+export const ColumnRight = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+`
+
+export const ButtonsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+`
