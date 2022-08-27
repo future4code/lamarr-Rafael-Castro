@@ -191,3 +191,26 @@ export const LoginMain = styled.div`
         visibility: hidden;
     }
 `
+
+// TRIPS DETAILS PAGE
+export const TripDetails = styled.div`
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    margin-top: 100px;
+
+    h1{
+        font-family: var(--title-font);
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        font-family: var(--text-font);
+        font-size: 22px;
+
+        li{
+            padding: 10px;
+        }
+    }
+`

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { aluno, rootUrl } from "../Constants"
 import { goToBack } from '../Coordinator'
 import useAuthenticated from "../Hooks/useAuthenticated"
+import { TripDetails } from "../../GlobalStyle";
 
 export function TripDetailsPage() {
     useAuthenticated()
@@ -67,12 +68,12 @@ export function TripDetailsPage() {
     })
 
     return (
-        <>
+        <TripDetails>
             <h1>Trip Details Page</h1>
             <ul>
                 {tripDetailsRender}
             </ul>
             <button onClick={() => {goToBack(navigate)}}>Voltar</button>
-        </>
+        </TripDetails>
     );
 }
