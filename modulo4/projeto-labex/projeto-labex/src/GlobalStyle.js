@@ -151,3 +151,24 @@ export const AdminTripsListContainer = styled.div`
         }
     }
 `
+
+// CREATE TRIP PAGE
+export const CreateTripFormContainer = styled.div`
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+
+    h1{
+        font-family: var(--title-font);
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    select{
+        height: 1.55em;
+    }
+`
