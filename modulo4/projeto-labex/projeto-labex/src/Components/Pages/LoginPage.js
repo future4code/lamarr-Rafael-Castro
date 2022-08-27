@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
-import { goToBack } from '../Coordinator'
 import { useForm } from "../Hooks/useForm";
 import { rootUrl, aluno } from "../Constants";
+import { LoginMain } from "../../GlobalStyle";
 
 
 export function LoginPage() {
@@ -31,10 +31,10 @@ export function LoginPage() {
     }
 
     return (
-        <>
+        <LoginMain>
             <h1>Login</h1>
             <form onSubmit={Login}>
-                {/* <label htmlFor="email">Email:</label> */}
+                <label htmlFor="email">Email:</label>
                 <input 
                     type="email" 
                     name="email"
@@ -43,7 +43,7 @@ export function LoginPage() {
                     onChange={inputHandler}
                     required
                 />
-                {/* <label htmlFor="password">Email:</label> */}
+                <label htmlFor="password">Senha:</label>
                 <input 
                     type="password" 
                     name="password" 
@@ -52,9 +52,11 @@ export function LoginPage() {
                     onChange={inputHandler}
                     required
                 />
-                <button type="submit">Acessar</button>
+                <div>
+                    <button>Acessar</button>
+                    <button onClick={() => {navigate("/")}}>Voltar</button>
+                </div>
             </form>
-            <button onClick={() => {goToBack(navigate)}}>Voltar</button>
-        </>
+        </LoginMain>
     );
 }

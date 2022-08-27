@@ -172,3 +172,22 @@ export const CreateTripFormContainer = styled.div`
         height: 1.55em;
     }
 `
+
+// LOGIN PAGE
+export const LoginMain = styled.div`
+    width: 40%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+    }
+
+    label{
+        visibility: hidden;
+    }
+`
