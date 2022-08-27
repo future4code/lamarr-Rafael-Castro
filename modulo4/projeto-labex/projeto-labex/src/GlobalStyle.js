@@ -56,14 +56,8 @@ export const HomePageMain = styled.div`
 
 // TRIPS LIST PAGE
 export const TripsListContainer = styled.div`
-    width: 50%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     margin-top: 100px;
-    /* border: 1px dotted white; */
 
     h1{
         font-family: var(--title-font);
@@ -124,8 +118,36 @@ export const ColumnRight = styled.div`
     gap: 5px;
 `
 
-export const ButtonsContainer = styled.div`
+export const ButtonsApplicationForm = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 15px 0;
+`
+
+// ADMIN HOME PAGE
+export const AdminTripsListContainer = styled.div`
+    text-align: center;
+    margin-top: 100px;
+
+    h1{
+        font-family: var(--title-font);
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        font-family: var(--text-font);
+        font-size: 22px;
+
+        li{
+            padding: 5px;
+
+            button{
+                margin-left: 10px;
+            }
+            button:nth-child(1){
+                margin-left: 30px;
+            }
+        }
+    }
 `

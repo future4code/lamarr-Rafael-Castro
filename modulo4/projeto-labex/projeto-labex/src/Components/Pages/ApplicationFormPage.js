@@ -9,7 +9,7 @@ import { ApplicationFormContainer,
         ColumnsContainer, 
         ColumnLeft, 
         ColumnRight, 
-        ButtonsContainer } from "../../GlobalStyle";
+        ButtonsApplicationForm } from "../../GlobalStyle";
 
 export function ApplicationFormPage() {
     const navigate = useNavigate();
@@ -114,10 +114,10 @@ export function ApplicationFormPage() {
                                     </select>
                                 </ColumnRight>
                             </ColumnsContainer>
-                            <ButtonsContainer>
+                            <ButtonsApplicationForm>
                                 <button onClick={() => {goToBack(navigate)}}>Voltar</button>
                                 <button>Enviar</button>
-                            </ButtonsContainer>
+                            </ButtonsApplicationForm>
                         </form>
                     </>
                 }

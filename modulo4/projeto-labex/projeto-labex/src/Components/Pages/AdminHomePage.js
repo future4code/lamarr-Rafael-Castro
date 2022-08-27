@@ -5,6 +5,7 @@ import { goToBack, goToCreateTripPage } from '../Coordinator'
 import useRequestData from "../Hooks/useRequestData"
 import {rootUrl, aluno} from '../Constants'
 import useAuthenticated from "../Hooks/useAuthenticated"
+import { AdminTripsListContainer } from "../../GlobalStyle";
 
 export function AdminHomePage() {
     useAuthenticated()
@@ -43,7 +44,7 @@ export function AdminHomePage() {
     })
     
     return (
-        <>
+        <AdminTripsListContainer>
             <h1>Área Administrativa</h1>
             {isLoadingTrips&&'Carregando...'}
             {!isLoadingTrips&&dataTrips&&
@@ -54,8 +55,10 @@ export function AdminHomePage() {
                 </>
             }
             {!isLoadingTrips&&!dataTrips&&errorTrips}
-            <button onClick={() => {goToBack(navigate)}}>Voltar</button>
-            <button onClick={() => {goToCreateTripPage(navigate)}}>Criar nova viagem</button>
-        </>
+            <div>
+                <button onClick={() => {goToBack(navigate)}}>Voltar</button>
+                <button onClick={() => {goToCreateTripPage(navigate)}}>Criar nova viagem</button>
+            </div>
+        </AdminTripsListContainer>
     );
 }
