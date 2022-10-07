@@ -19,8 +19,4 @@ const addCustomer = (customerList, newCustomer) => {
     console.log(customerList)
 }
 
-
-
-
-
 addCustomer(customers, newCustomer)
