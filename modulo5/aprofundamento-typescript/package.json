@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "start": "tsc && node ./build/index.js"
+  },
+  "name": "aprofundamento-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
