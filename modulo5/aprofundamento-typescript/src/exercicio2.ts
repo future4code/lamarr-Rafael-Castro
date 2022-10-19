@@ -1,8 +1,13 @@
 // A) A função deve receber um array de números como entrada e devolve um
 // objeto com 3 propriedades.
 
+type Estatistica = {
+    maior:number,
+    menor:number,
+    media:number
+}
 
-function obterEstatisticas(numeros:number[]) {
+function obterEstatisticas(numeros:number[]):Estatistica {
 
     const numerosOrdenados:number[] = numeros.sort(
         (a, b) => a - b
@@ -31,5 +36,5 @@ function obterEstatisticas(numeros:number[]) {
 // C)
 type Amostra = {
     numeros:number[],
-    obterEstatisticas:()=>{}
+    obterEstatisticas:(numeros:Number[])=>Estatistica
 }
