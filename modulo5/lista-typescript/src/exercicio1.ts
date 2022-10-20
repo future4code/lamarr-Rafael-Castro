@@ -1,7 +1,7 @@
-const userInput = require("readline-sync")
+const userInputEx1 = require("readline-sync")
 
-const userName=userInput.question("Informe seu nome.")
-const userBday=userInput.question("Informe sua data de nascimento no formato dd/mm/aaaa.")
+const userName=userInputEx1.question("Informe seu nome.")
+const userBday=userInputEx1.question("Informe sua data de nascimento no formato dd/mm/aaaa.")
 
 function greetUser(name:string, date:string):string{
     enum Months {
