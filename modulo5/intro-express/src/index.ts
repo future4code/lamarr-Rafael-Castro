@@ -162,6 +162,21 @@ app.delete("/post", (req, res) => {
 })
 
 
+// Exercicio 10)
+app.delete("/user", (req, res) => {
+    const userId = Number(req.query.userId)
+
+    if (!userId) {
+        res.status(400).send("Please inform user ID.")
+    }
+
+    let remainingUsers = arrayUsers.filter(item => {
+        return item.id !== userId
+    })
+    res.status(200).send(remainingUsers)
+})
+
+
 
 app.listen(3003, () => {
     console.log("Server is running.")
