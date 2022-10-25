@@ -147,6 +147,21 @@ app.get("/user/posts", (req, res) => {
 })
 
 
+// Exercicio 9)
+app.delete("/post", (req, res) => {
+    const postId = Number(req.query.postId)
+
+    if (!postId) {
+        res.status(400).send("Please inform post ID.")
+    }
+
+    let remainingPosts = arrayPosts.filter(item => {
+        return item.id !== postId
+    })
+    res.status(200).send(remainingPosts)
+})
+
+
 
 app.listen(3003, () => {
     console.log("Server is running.")
