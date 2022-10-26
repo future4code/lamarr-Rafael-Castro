@@ -1,6 +1,5 @@
-import express, { Request, response, Response } from 'express'
+import express from 'express'
 import cors from 'cors'
-import axios from 'axios'
 
 const app = express()
 
@@ -176,6 +175,8 @@ app.delete("/user", (req, res) => {
     res.status(200).send(remainingUsers)
 })
 
+
+// Exercicio 11)
 
 
 app.listen(3003, () => {
