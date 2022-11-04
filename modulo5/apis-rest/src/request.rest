@@ -1,0 +1,35 @@
+GET http://localhost:3003/users
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/users/type?type=normal
+Content-Type: application/json
+
+###
+GET http://localhost:3003/users/name?name=ali
+Content-Type: application/json
+
+###
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name":"Tom",
+    "email":"tom@email.com",
+    "type": "normal",
+    "age":100
+}
+
+###
+PUT http://localhost:3003/user
+Content-Type: application/json
+
+
+###
+PATCH http://localhost:3003/user
+Content-Type: application/json
+
+###
+DELETE http://localhost:3003/user/5
+Content-Type: application/json
