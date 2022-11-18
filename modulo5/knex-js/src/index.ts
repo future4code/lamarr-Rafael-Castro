@@ -94,53 +94,65 @@ app.get("/actor/:id", async (req: Request, res: Response) => {
 
 
 // Exercício 3B
-app.get("/actor", async (req:Request, res:Response) => {
+app.get("/actor", async (req: Request, res: Response) => {
     try {
         const gender = req.query.gender
         const countByGender = await connection("Actor")
-        .where({gender})
-        res.status(200).send(countByGender.length+"")
+            .where({ gender })
+        res.status(200).send(countByGender.length + "")
 
-    } catch (error:any) {
+    } catch (error: any) {
         res.status(400).send(error.message)
     }
 })
 
 
 //  Exercício 4A
-app.put("/actor", async (req:Request, res:Response) => {
+app.put("/actor", async (req: Request, res: Response) => {
     try {
         await updateSalary(req.body.id, req.body.value)
         res.end('Actor salary updated.')
-    } catch (error:any) {
+    } catch (error: any) {
         res.status(400).send(error.message)
     }
 })
 
 
 // Exercício 4B
-app.delete("/actor/:id", async (req:Request, res:Response)=> {
+app.delete("/actor/:id", async (req: Request, res: Response) => {
     try {
         await deleteActor(req.params.id)
         res.end('Actor deleted.')
-    } catch (error:any) {
+    } catch (error: any) {
         res.status(400).send(error.message)
     }
 })
 
 
 // Exercício 5
-// const addMovie = async (
-//     id:string, 
-//     movie_name:string, 
-//     synopsis:string, 
-//     release_date:string, 
-//     playing_limit_date:string
-// ): Promise<any> => {
+const addMovie = async (
+    id: string,
+    movie_name: string,
+    synopsis: string,
+    release_date: Date,
+    playing_limit_date: Date
+): Promise<any> => {
+    await connection('Movie')
+        .insert([{id, movie_name, synopsis,
+            release_date, playing_limit_date}])
+}
 
-// }
-
-
+app.post("/movie", async (req: Request, res: Response) => {
+    try {
+        const {id, movie_name, synopsis, release_date, 
+            playing_limit_date} = req.body
+        addMovie(id, movie_name, synopsis, release_date, 
+            playing_limit_date)
+        res.end("Movie added.")
+    } catch (error: any) {
+        res.status(400).send(error.message)
+    }
+})
 
 
 app.listen(3003, () => {

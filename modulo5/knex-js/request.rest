@@ -27,3 +27,14 @@ DELETE http://localhost:3003/actor/005
 Content-Type: application/json
 
 ###
+# Exercício 5
+POST http://localhost:3003/movie
+Content-Type: application/json
+
+{
+    "id":"001",
+    "movie_name":"test1",
+    "synopsis":"test2",
+    "release_date":"2000-02-02",
+    "playing_limit_date":"2003-03-03"
+}

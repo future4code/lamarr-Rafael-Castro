@@ -126,3 +126,30 @@ app.delete("/actor/:id", async (req:Request, res:Response)=> {
     }
 })
 ```
+
+## Exercício 5
+```
+const addMovie = async (
+    id: string,
+    movie_name: string,
+    synopsis: string,
+    release_date: Date,
+    playing_limit_date: Date
+): Promise<any> => {
+    await connection('Movie')
+        .insert([{id, movie_name, synopsis,
+            release_date, playing_limit_date}])
+}
+
+app.post("/movie", async (req: Request, res: Response) => {
+    try {
+        const {id, movie_name, synopsis, release_date, 
+            playing_limit_date} = req.body
+        addMovie(id, movie_name, synopsis, release_date, 
+            playing_limit_date)
+        res.end("Movie added.")
+    } catch (error: any) {
+        res.status(400).send(error.message)
+    }
+})
+```
