@@ -1,0 +1,29 @@
+GET http://localhost:3003/users/004
+Content-Type: application/json
+
+###
+# Exercício 3A
+GET http://localhost:3003/actor/004
+Content-Type: application/json
+
+###
+# Exercício 3B
+GET http://localhost:3003/actor?gender=female
+Content-Type: application/json
+
+###
+# Exercício 4A
+PUT http://localhost:3003/actor
+Content-Type: application/json
+
+{
+    "id":"005",
+    "value":503
+}
+
+###
+# Exercício 4B
+DELETE http://localhost:3003/actor/005
+Content-Type: application/json
+
+###
