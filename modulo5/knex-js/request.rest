@@ -38,3 +38,13 @@ Content-Type: application/json
     "release_date":"2000-02-02",
     "playing_limit_date":"2003-03-03"
 }
+
+###
+# Exercício 6
+GET http://localhost:3003/movie/all
+Content-Type: application/json
+
+###
+# Exercício 7
+GET http://localhost:3003/movie/search?name=%o%
+Content-Type: application/json

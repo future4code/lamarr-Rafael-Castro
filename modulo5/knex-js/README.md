@@ -153,3 +153,34 @@ app.post("/movie", async (req: Request, res: Response) => {
     }
 })
 ```
+
+## Exercício 6
+```
+// Exercício 6
+app.get("/movie/all", async (req:Request, res:Response) => {
+    try {
+        const result = await connection('Movie')
+            .select()
+            .limit(2)
+        res.status(200).send(result)
+    } catch (error:any) {
+        res.status(400).send(error.message)
+    }
+})
+```
+
+## Exercício 7
+```
+app.get("/movie/search", async (req:Request, res:Response) => {
+    try {
+        const result = await connection("Movie")
+            .where('movie_name', 'like', `${req.query.name}`)
+            .orderBy('release_date')
+
+        res.status(200).send(result)
+    } catch (error:any) {
+        res.status(400).send(error.message)
+    }
+})
+```
+
