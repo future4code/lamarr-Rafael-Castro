@@ -1,0 +1,28 @@
+#  Exercício 1a
+GET http://localhost:3003/staff/name?name=
+Content-Type: application/json
+
+###
+
+#  Exercício 1b
+GET http://localhost:3003/staff/type/Teacher
+Content-Type: application/json
+
+###
+
+#  Exercício 2
+GET http://localhost:3003/staff/orderby?field=type
+Content-Type: application/json
+
+###
+
+#  Exercício 3
+GET http://localhost:3003/staff/pagination?page=2
+Content-Type: application/json
+
+###
+
+#  Exercício 4
+GET http://localhost:3003/staff/full?page=1
+# GET http://localhost:3003/staff/full?page=2&fieldSort=type&nameFilter=a&typeFilter=cx
+Content-Type: application/json
