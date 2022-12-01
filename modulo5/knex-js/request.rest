@@ -1,0 +1,50 @@
+GET http://localhost:3003/users/004
+Content-Type: application/json
+
+###
+# Exercício 3A
+GET http://localhost:3003/actor/004
+Content-Type: application/json
+
+###
+# Exercício 3B
+GET http://localhost:3003/actor?gender=female
+Content-Type: application/json
+
+###
+# Exercício 4A
+PUT http://localhost:3003/actor
+Content-Type: application/json
+
+{
+    "id":"005",
+    "value":503
+}
+
+###
+# Exercício 4B
+DELETE http://localhost:3003/actor/005
+Content-Type: application/json
+
+###
+# Exercício 5
+POST http://localhost:3003/movie
+Content-Type: application/json
+
+{
+    "id":"001",
+    "movie_name":"test1",
+    "synopsis":"test2",
+    "release_date":"2000-02-02",
+    "playing_limit_date":"2003-03-03"
+}
+
+###
+# Exercício 6
+GET http://localhost:3003/movie/all
+Content-Type: application/json
+
+###
+# Exercício 7
+GET http://localhost:3003/movie/search?name=%o%
+Content-Type: application/json
