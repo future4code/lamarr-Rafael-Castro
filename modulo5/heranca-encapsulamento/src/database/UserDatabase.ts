@@ -2,14 +2,14 @@ import { User } from "../models/User"
 import { BaseDatabase } from "./BaseDatabase"
 
 export class UserDatabase extends BaseDatabase{
+    
+    public static createUser = async (newUser:User) => {
+        await UserDatabase.connection(UserDatabase.userTableName).insert(newUser)
+    }
 
     public static getAllUsers = async () => {
         const result = await UserDatabase.connection(UserDatabase.userTableName).select()
         return result
-    }
-
-    public static createUser = async (newUser:User) => {
-        await UserDatabase.connection(UserDatabase.userTableName).insert(newUser)
     }
 
     public static getUserById = async (id:string) => {

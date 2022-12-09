@@ -1,5 +1,5 @@
-import { Purchase } from "../models/Purchase"
 import { BaseDatabase } from "./BaseDatabase"
+import { PurchaseDB } from "../models/Purchase"
 
 export class PurchasesDatabase extends BaseDatabase {
 
@@ -22,7 +22,7 @@ export class PurchasesDatabase extends BaseDatabase {
         return result
     }
 
-    public static createPurchase = async (newPurchase: Purchase) => {
+    public static createPurchase = async (newPurchase: PurchaseDB) => {
         await PurchasesDatabase
             .connection(PurchasesDatabase.purchasesTableName)
             .insert(newPurchase)

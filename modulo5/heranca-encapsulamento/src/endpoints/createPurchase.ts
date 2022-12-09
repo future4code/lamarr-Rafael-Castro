@@ -1,10 +1,9 @@
 import { Request, Response } from "express"
-import connection from "../database/connection"
+import { ProductDatabase } from "../database/ProductDatabase"
 import { PurchasesDatabase } from "../database/PurchaseDatabase"
-import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "../database/tableNames"
 import { UserDatabase } from "../database/UserDatabase"
 import { Product } from "../models/Product"
-import { Purchase } from "../models/Purchase"
+import { PurchaseDB } from "../models/Purchase"
 
 export const createPurchase = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -15,10 +14,6 @@ export const createPurchase = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        // const findUser = await connection(TABLE_USERS)
-        // .select()
-        // .where({ id: userId })
-
         const findUser = await UserDatabase.findUser(userId)
 
         if (findUser.length === 0) {
@@ -26,20 +21,12 @@ export const createPurchase = async (req: Request, res: Response) => {
             throw new Error("Usuário não encontrado.")
         }
 
-        const findProduct = await connection(TABLE_PRODUCTS)
-        .select()
-        .where({ id: productId })
+        const findProduct = await ProductDatabase.findProduct(productId)
 
         if (findProduct.length === 0) {
             errorCode = 404
             throw new Error("Produto não encontrado.")
         }
-        
-        // const product: Product = {
-        //     id: findProduct[0].id,
-        //     name: findProduct[0].name,
-        //     price: findProduct[0].price
-        // }
 
         const product = new Product(
             findProduct[0].id,
@@ -47,31 +34,17 @@ export const createPurchase = async (req: Request, res: Response) => {
             findProduct[0].price
         )
 
-        // const newPurchase: Purchase = {
-        //     id: Date.now().toString(),
-        //     userId,
-        //     productId,
-        //     quantity,
-        //     totalPrice: product.getPrice() * quantity
-        // }
-
-        const purchase = new Purchase(
-            Date.now().toString(),
-            userId,
-            productId,
+        const newPurchase:PurchaseDB = {
+            id: Date.now().toString(),
+            user_id: userId,
+            product_id: productId,
             quantity,
-            product.getPrice() * quantity
-        )
+            total_price: product.getPrice() * quantity
+        }
+        
+        await PurchasesDatabase.createPurchase(newPurchase)
 
-        await connection(TABLE_PURCHASES).insert({
-            id: purchase.getId(),
-            user_id: purchase.getUserId(),
-            product_id: purchase.getProductId(),
-            quantity: purchase.getQuantity(),
-            total_price: purchase.getTotalPrice()
-        })
-
-        res.status(201).send({ message: "Compra registrada", purchase: purchase })
+        res.status(201).send({ message: "Compra registrada", purchase: newPurchase })
     } catch (error) {
         res.status(errorCode).send({ message: error.message })
     }
