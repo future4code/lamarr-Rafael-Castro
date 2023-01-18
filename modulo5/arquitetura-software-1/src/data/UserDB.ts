@@ -10,20 +10,14 @@ export class UserDB extends BaseDB{
         super()
     }
 
-    
-    static createTableDt = async (): Promise<any> =>{
-        try {
-            console.log('test createTableDt');
-            // await UserDB.connection.raw(`
-            //     CREATE TABLE User_Arq(
-            //     id VARCHAR(255) PRIMARY KEY,
-            //     name VARCHAR(255) NOT NULL,
-            //     email VARCHAR(255) NOT NULL UNIQUE,
-            //     password VARCHAR(255) NOT NULL)
-            // `)
-        } catch (error:any) {
-            return error
-        }
+    createTableDt = async (): Promise<void> =>{
+        await UserDB.connection.raw(`
+            CREATE TABLE User_Arq(
+            id VARCHAR(255) PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL UNIQUE,
+            password VARCHAR(255) NOT NULL)
+        `)
     }
 
     static getUsersDt = async ():Promise<UserDB[]> => {

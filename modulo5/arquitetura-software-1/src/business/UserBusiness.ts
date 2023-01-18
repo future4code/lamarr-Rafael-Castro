@@ -3,8 +3,8 @@ import { UserDB } from "../data/UserDB"
 export class UserBusiness {
     
     createTableBis = async (): Promise<any> => {
-        await UserDB.createTableDt
-        console.log('test createTableBis')
+        const userDtObj = new UserDB('1','2','3','4')
+        await userDtObj.createTableDt()
     }
     
     getUsersBis = async (): Promise<UserDB[]> => {

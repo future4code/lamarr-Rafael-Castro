@@ -7,10 +7,7 @@ export class UserController extends BaseDB {
 
     createTableCtl = async (req:Request, res:Response): Promise<void> =>{
         try {
-            const userBisObj = new UserBusiness()
-            await userBisObj.createTableBis()
-            // await new UserBusiness().createTableBis()
-            console.log('test createTableCtl');
+            await new UserBusiness().createTableBis()
             res.status(201).send({ message: "Table User_Arq created!" })
         } catch (error:any) {
             res.status(400).send(error.message)
