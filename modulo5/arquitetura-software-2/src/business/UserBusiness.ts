@@ -18,7 +18,12 @@ export class UserBusiness {
     })
   }
 
-  async getUsers():Promise<void> {
+  // async getUsers():Promise<teste>{
+  //   const userDatabase = new UserDatabase()
+  //   return await userDatabase.getUsers()
+  // }
+
+  getUsers = async ():Promise<void> =>{
     const userDatabase = new UserDatabase()
     return await userDatabase.getUsers()
   }
