@@ -1,0 +1,17 @@
+### Create table "User_Arq"
+POST http://localhost:3003/table
+Content-Type: application/json
+
+### Add new user
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+	"name": "Michael Scott",
+	"email": "michael8@dundermifflin.com",
+	"password": "theboss"
+}
+
+### Get all users
+GET http://localhost:3003/all
+Content-Type: application/json
