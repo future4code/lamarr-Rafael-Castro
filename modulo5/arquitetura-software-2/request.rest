@@ -1,0 +1,28 @@
+### Create user
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste2",
+    "email": "email2@email.com",
+    "password": "23432535"
+}
+
+### Get all users
+GET http://localhost:3003/user/get
+Content-Type: application/json
+
+### Create movie
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "movie3",
+    "description": "um filme duca",
+    "duration_in_minutes": 100,
+    "year_of_release": "2020"
+}
+
+### Get all movies
+GET http://localhost:3003/movie/get
+Content-Type: application/json
