@@ -1,0 +1,30 @@
+### Sign Up
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Fin Germee", 
+   "nickname": "fingermee", 
+   "email": "fin@germee.com",
+   "password": "justdoit"
+}
+
+### Login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "fin@germee.com",
+   "password": "justdoit"
+}
+
+
+### Get user ID by Token
+GET http://localhost:3003/user/getid?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlMjYxNWM2LWM3NzktNGIwOC1hZWQxLTlkZGUzNjNjN2RhZCIsImlhdCI6MTY3NTIwMTYxOSwiZXhwIjoxNjc1MjA1MjE5fQ.LUWKFO3T9spBfjAhWY20bYhMhUDQUm6PbwDfhQUcQaE
+Content-Type: application/json
+
+
+### Get user Data by Token
+GET http://localhost:3003/user/getdata
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlMjYxNWM2LWM3NzktNGIwOC1hZWQxLTlkZGUzNjNjN2RhZCIsImlhdCI6MTY3NTIwMTYxOSwiZXhwIjoxNjc1MjA1MjE5fQ.LUWKFO3T9spBfjAhWY20bYhMhUDQUm6PbwDfhQUcQaE
