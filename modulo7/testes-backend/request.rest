@@ -1,5 +1,4 @@
 ### CADASTRO
-
 POST http://localhost:3003/users/signup
 Content-Type: application/json
 
@@ -10,8 +9,8 @@ Content-Type: application/json
 	"role":"ADMIN"
 }
 
-### LOGIN
 
+### LOGIN
 POST http://localhost:3003/users/login
 Content-Type: application/json
 
@@ -19,3 +18,8 @@ Content-Type: application/json
 	"email": "user2@email.com",
 	"password": "123456"
 }
+
+
+### GET USER ID
+GET http://localhost:3003/users/get-user/2b0648b0-0ca2-465e-8b7e-620295e12af3
+Content-Type: application/json
