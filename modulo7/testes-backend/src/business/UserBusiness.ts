@@ -1,5 +1,6 @@
 import { CustomError } from "../errors/CustomError";
-import { User, stringToUserRole } from "../model/User";
+import { UserIdNotprovided, UserNotFound } from "../errors/UserError"
+import { User, stringToUserRole, UserOutputDTO } from "../model/User";
 import { IHashGenerator, IIdGenerator, ITokenGenerator } from "./ports"
 import { UserRepository } from "./UserRepository"
 
@@ -81,6 +82,29 @@ export class UserBusiness {
          });
 
          return { accessToken };
+      } catch (error:any) {
+         throw new CustomError(error.statusCode, error.message)
+      }
+   }
+
+   public async getUserById(id:string):Promise<UserOutputDTO | undefined>{
+      try {
+         if (!id) {
+            throw new UserIdNotprovided
+         }
+         const result = await this.userDatabase.getUserById(id)
+
+         if (!result) {
+            throw new UserNotFound
+         }else {
+            const userFound:UserOutputDTO = {
+               id: result?.getId(),
+               name: result.getName(),
+               email: result.getEmail(),
+               role: result.getRole()
+            }
+            return userFound
+         }
       } catch (error:any) {
          throw new CustomError(error.statusCode, error.message)
       }

@@ -45,3 +45,10 @@ export enum USER_ROLES {
    NORMAL = "NORMAL",
    ADMIN = "ADMIN",
 }
+
+export interface UserOutputDTO {
+   id: string,
+   name: string,
+   email: string,
+   role: USER_ROLES
+}

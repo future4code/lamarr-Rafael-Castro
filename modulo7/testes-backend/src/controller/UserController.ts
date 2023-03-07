@@ -30,5 +30,16 @@ export class UserController {
          res.status(statusCode || 400).send({ message });
       }
    }
+
+   public async getUserById(req: Request, res: Response) {
+      try {
+         const { id } = req.params
+         const result = await this.userBusiness.getUserById(id)
+         res.status(200).send(result);
+      } catch (error:any) {
+         const { statusCode, message } = error
+         res.status(statusCode || 400).send({ message });
+      }
+   }
 }
 

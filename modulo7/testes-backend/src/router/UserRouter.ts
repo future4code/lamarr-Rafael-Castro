@@ -19,5 +19,6 @@ const userBusiness = new UserBusiness(
 )
 const userController = new UserController(userBusiness)
 
+userRouter.get("/get-user/:id", (req, res) => userController.getUserById(req, res));
 userRouter.post("/signup", (req, res) => userController.signup(req, res));
 userRouter.post("/login", (req, res) => userController.login(req, res));
